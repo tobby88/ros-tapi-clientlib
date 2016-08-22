@@ -1,0 +1,5 @@
+string SenderUUID
+string SenderFeatureUUID
+string ReceiverUUID
+string ReceiverFeatureUUID
+float64 Coefficient
