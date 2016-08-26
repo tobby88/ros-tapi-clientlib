@@ -1,14 +1,23 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tobbyapi_clientlib)
 
+# Use specified C++ standard
+set(CMAKE_CXX_STANDARD 11)
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  tobbyapi_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+# Qt
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -98,7 +107,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES tobbyapi_clientlib
-#  CATKIN_DEPENDS other_catkin_pkg
+  CATKIN_DEPENDS message_runtime roscpp tobbyapi_msgs
 #  DEPENDS system_lib
 )
 
@@ -108,17 +117,17 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-# include_directories(include)
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
-# add_library(tobbyapi_clientlib
-#   src/${PROJECT_NAME}/tobbyapi_clientlib.cpp
-# )
+add library(tobbyapi_clientlib src/tobbyapi_client.cpp
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(tobbyapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(tobbyapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
 # add_executable(tobbyapi_clientlib_node src/tobbyapi_clientlib_node.cpp)
@@ -128,9 +137,10 @@ catkin_package(
 # add_dependencies(tobbyapi_clientlib_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(tobbyapi_clientlib_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(tobbyapi_clientlib
+  ${catkin_LIBRARIES}
+  uuid
+)
 
 #############
 ## Install ##
