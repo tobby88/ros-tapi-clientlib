@@ -124,6 +124,8 @@ include_directories(
 
 ## Declare a C++ library
 add_library(tobbyapi_clientlib
+  include/tobbyapi_clientlib/publisher.hpp
+  src/publisher.cpp
   src/tobbyapi_client.cpp
 )
 
