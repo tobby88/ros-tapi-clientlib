@@ -119,6 +119,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -171,7 +172,7 @@ install(TARGETS tobbyapi_clientlib tobbyapi_clientlib
 )
 
 ## Mark cpp header files for installation
-install(DIRECTORY include
+install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.hpp"
   PATTERN ".git" EXCLUDE
