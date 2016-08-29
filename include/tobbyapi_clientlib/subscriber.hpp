@@ -7,6 +7,9 @@
 #include "src/tobbyapi_client.hpp"
 #include "tobbyapi_msgs/Config.h"
 
+#define SubscribeOptionsForAPI(type, buffer, callfctn)                                                                 \
+  ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
+
 namespace TobbyAPI
 {
 class Subscriber : public TobbyApiClient

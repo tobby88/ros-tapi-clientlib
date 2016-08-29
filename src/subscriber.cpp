@@ -6,9 +6,6 @@
 #include "std_msgs/Int8.h"
 #include "tobbyapi_msgs/Feature.h"
 
-#define SubscribeOptionsForAPI(type, buffer, callfctn)                                                                 \
-  ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
-
 using namespace std;
 
 namespace TobbyAPI
