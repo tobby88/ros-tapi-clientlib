@@ -77,6 +77,7 @@ void Subscriber::readConfigMsg(const tobbyapi_msgs::Config::ConstPtr& msg)
         {
           subscribers[i].second->shutdown();
           delete subscribers[i].second;
+          subscribers[i].second = 0;
         }
         else
           ;
@@ -87,6 +88,7 @@ void Subscriber::readConfigMsg(const tobbyapi_msgs::Config::ConstPtr& msg)
         {
           subscribers[i].second->shutdown();
           delete subscribers[i].second;
+          subscribers[i].second = 0;
         }
         subscribers[i].second = new ros::Subscriber(nh->subscribe(subscribers[i].first));
       }
