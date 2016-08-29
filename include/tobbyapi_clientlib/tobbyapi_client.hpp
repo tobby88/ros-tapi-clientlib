@@ -5,11 +5,11 @@
 #define SENDER_DEVICE 1
 #define RECEIVER_DEVICE 2
 
-#include <ros/ros.h>
-#include <std_msgs/Header.h>
 #include <string>
 #include <thread>
 #include <vector>
+#include "ros/ros.h"
+#include "std_msgs/Header.h"
 #include "tobbyapi_msgs/Feature.h"
 #include "tobbyapi_msgs/HelloRequest.h"
 
@@ -49,7 +49,6 @@ private:
   ros::ServiceClient helloClient;
   ros::NodeHandle* nh;
   std::string nodename;
-
 };
 }
 #endif  // TOBBYAPI_CLIENT_H
