@@ -15,6 +15,7 @@ namespace TobbyAPI
 Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
   : TobbyApiClient(nh, nodename, RECEIVER_DEVICE), nh(nh), nodename(nodename)
 {
+  subscribers.clear();
   configSub = nh->subscribe("TobbyAPI/Config", 1000, &Subscriber::readConfigMsg, this);
 }
 
@@ -52,8 +53,7 @@ void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, strin
     string featureUUID = getNextFeatureUUID();
     opt.topic = "TobbyAPI/" + uuid + "/" + featureUUID;
     pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
-    newEntry.first = opt;
-    newEntry.second = subscriber;
+    newEntry = make_pair(opt, subscriber);
     subscribers.push_back(newEntry);
     tobbyapi_msgs::Feature feature;
     feature.FeatureType = type;
