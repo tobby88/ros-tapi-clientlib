@@ -77,6 +77,7 @@ string TobbyApiClient::getNextFeatureUUID()
     uuidFileOutput << uuid << "\n";
     uuidFileOutput.close();
   }
+  return uuid;
 }
 
 // Private member functions
