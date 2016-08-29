@@ -54,8 +54,8 @@ void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, strin
     string featureUUID = getNextFeatureUUID();
     opt.topic = "TobbyAPI/" + uuid + "/" + featureUUID;
     pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
-    newEntry.first=opt;
-    newEntry.second=subscriber;
+    newEntry.first = opt;
+    newEntry.second = subscriber;
     subscribers.push_back(newEntry);
     tobbyapi_msgs::Feature feature;
     feature.FeatureType = type;
