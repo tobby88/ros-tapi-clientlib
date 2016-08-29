@@ -18,6 +18,7 @@ namespace TobbyAPI
 Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
   : TobbyApiClient(nh, nodename, RECEIVER_DEVICE), nh(nh), nodename(nodename)
 {
+  configSub = nh->subscribe("TobbyAPI/Config", 1000, &Subscriber::readConfigMsg, this);
 }
 
 Subscriber::~Subscriber()
@@ -65,5 +66,35 @@ void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, strin
     featureMsgs.push_back(feature);
   }
   return;
+}
+
+// Private member functions
+
+void Subscriber::readConfigMsg(const tobbyapi_msgs::Config::ConstPtr& msg)
+{
+  for (int i = 0; i < featureMsgs.size(); i++)
+  {
+    if (msg->ReceiverUUID == uuid && msg->ReceiverFeatureUUID == featureMsgs[i].UUID)
+    {
+      if (msg->SenderUUID == "0" || msg->SenderFeatureUUID == "0")
+        if (subscribers[i].second)
+        {
+          subscribers[i].second->shutdown();
+          delete subscribers[i].second;
+        }
+        else
+          ;
+      else
+      {
+        subscribers[i].first.topic = "TobbyAPI/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID;
+        if (subscribers[i].second)
+        {
+          subscribers[i].second->shutdown();
+          delete subscribers[i].second;
+        }
+        subscribers[i].second = new ros::Subscriber(nh->subscribe(subscribers[i].first));
+      }
+    }
+  }
 }
 }
