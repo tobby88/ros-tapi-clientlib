@@ -127,6 +127,7 @@ include_directories(
 add_library(tobbyapi_clientlib
   include/tobbyapi_clientlib/publisher.hpp
   include/tobbyapi_clientlib/subscriber.hpp
+  include/tobbyapi_clientlib/tobbyapi_client.hpp
   src/publisher.cpp
   src/subscriber.cpp
   src/tobbyapi_client.cpp
