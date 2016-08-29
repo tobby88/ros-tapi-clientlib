@@ -22,9 +22,9 @@ public:
   TobbyApiClient(ros::NodeHandle* nh, std::string nodename, uint8_t deviceType);
   ~TobbyApiClient();
 
-
 protected:
   // Protected meber functions
+  std::string generateUUID();
   std::string getNextFeatureUUID();
 
   // Protected member variables
@@ -34,7 +34,6 @@ protected:
 private:
   // Private member functions
   bool connect();
-  std::string generateUUID();
   void heartbeat();
   void loadUUIDs();
 

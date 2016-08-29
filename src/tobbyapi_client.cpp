@@ -33,48 +33,7 @@ TobbyApiClient::~TobbyApiClient()
   helloClient.shutdown();
 }
 
-// Private member functions
-
-bool TobbyApiClient::connect()
-{
-  bool status = false;
-  tobbyapi_msgs::Hello hello;
-  header.stamp = Time::now();
-  header.seq++;
-  hello.request.Header = header;
-  hello.request.Name = nodename;
-  hello.request.UUID = uuid;
-  if (deviceType == RECEIVER_DEVICE)
-    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_ReceiverDevice;
-  else if (deviceType == SENDER_DEVICE)
-    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_SenderDevice;
-  else
-  {
-    ROS_ERROR("Unknown type of device");
-    return false;
-  }
-  hello.request.Features = featureMsgs;
-  if (helloClient.call(hello))
-  {
-    status = hello.response.Status;
-    if (firstRun)
-    {
-      if (status)
-        ROS_INFO("Connection established, Status OK, Heartbeat %u", hello.response.Heartbeat);
-      else
-        ROS_INFO("Connection error, Heartbeat %u", hello.response.Heartbeat);
-      firstRun = false;
-    }
-    heartbeatInterval = hello.response.Heartbeat;
-  }
-  else
-  {
-    ROS_ERROR("Failed to establish connection to hello service");
-    status = false;
-  }
-
-  return status;
-}
+// Protected member functions
 
 string TobbyApiClient::generateUUID()
 {
@@ -118,6 +77,49 @@ string TobbyApiClient::getNextFeatureUUID()
     uuidFileOutput << uuid << "\n";
     uuidFileOutput.close();
   }
+}
+
+// Private member functions
+
+bool TobbyApiClient::connect()
+{
+  bool status = false;
+  tobbyapi_msgs::Hello hello;
+  header.stamp = Time::now();
+  header.seq++;
+  hello.request.Header = header;
+  hello.request.Name = nodename;
+  hello.request.UUID = uuid;
+  if (deviceType == RECEIVER_DEVICE)
+    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_ReceiverDevice;
+  else if (deviceType == SENDER_DEVICE)
+    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_SenderDevice;
+  else
+  {
+    ROS_ERROR("Unknown type of device");
+    return false;
+  }
+  hello.request.Features = featureMsgs;
+  if (helloClient.call(hello))
+  {
+    status = hello.response.Status;
+    if (firstRun)
+    {
+      if (status)
+        ROS_INFO("Connection established, Status OK, Heartbeat %u", hello.response.Heartbeat);
+      else
+        ROS_INFO("Connection error, Heartbeat %u", hello.response.Heartbeat);
+      firstRun = false;
+    }
+    heartbeatInterval = hello.response.Heartbeat;
+  }
+  else
+  {
+    ROS_ERROR("Failed to establish connection to hello service");
+    status = false;
+  }
+
+  return status;
 }
 
 void TobbyApiClient::loadUUIDs()
