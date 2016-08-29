@@ -13,7 +13,7 @@ public:
   ~Subscriber();
 
   // Public member functions
-  ros::Subscriber *AddFeature(ros::SubscribeOptions opt, std::string featurename = "", std::string description = "");
+  void AddFeature(ros::SubscribeOptions opt, std::string featurename = "", std::string description = "");
 
 private:
   // Private member variables

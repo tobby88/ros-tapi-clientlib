@@ -31,11 +31,10 @@ Subscriber::~Subscriber()
 
 // Public member functions
 
-ros::Subscriber* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, string description)
+void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, string description)
 {
   uint8_t type;
   bool error = false;
-  ros::Subscriber* subscriber = 0;
   opt.topic = "TobbyAPI/" + uuid + "/" + generateUUID();
 
   if (opt.datatype == "std_msgs/Float64")
@@ -51,10 +50,9 @@ ros::Subscriber* Subscriber::AddFeature(ros::SubscribeOptions opt, string featur
 
   if (!error)
   {
+    ros::Subscriber* subscriber = 0;
     string featureUUID = getNextFeatureUUID();
     opt.topic = "TobbyAPI/" + uuid + "/" + featureUUID;
-    subscriber = new ros::Subscriber(nh->subscribe(opt));
-    subscriber->shutdown();
     pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
     newEntry.first=opt;
     newEntry.second=subscriber;
@@ -66,6 +64,6 @@ ros::Subscriber* Subscriber::AddFeature(ros::SubscribeOptions opt, string featur
     feature.UUID = featureUUID;
     featureMsgs.push_back(feature);
   }
-  return subscriber;
+  return;
 }
 }
