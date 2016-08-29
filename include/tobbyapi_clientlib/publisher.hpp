@@ -1,3 +1,6 @@
+#ifndef PUBLISHER_H
+#define PUBLISHER_H
+
 #include <string>
 #include "ros/ros.h"
 #include "src/tobbyapi_client.hpp"
@@ -21,3 +24,5 @@ private:
   std::vector<ros::Publisher *> publishers;
 };
 }
+
+#endif  // PUBLISHER_H

@@ -1,3 +1,6 @@
+#ifndef SUBSCRIBER_H
+#define SUBSCRIBER_H
+
 #include <string>
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
@@ -27,3 +30,5 @@ private:
   std::vector<std::pair<ros::SubscribeOptions, ros::Subscriber *>> subscribers;
 };
 }
+
+#endif  // SUBSCRIBER_H
