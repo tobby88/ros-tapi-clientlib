@@ -6,13 +6,12 @@
 #include "tobbyapi_msgs/Feature.h"
 
 using namespace std;
-using namespace ros;
 
 namespace TobbyAPI
 {
 // Constructor/Destructor
 
-Publisher::Publisher(NodeHandle* nh, string nodename)
+Publisher::Publisher(ros::NodeHandle* nh, string nodename)
   : TobbyApiClient(nh, nodename, SENDER_DEVICE), nh(nh), nodename(nodename)
 {
 }
