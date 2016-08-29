@@ -20,8 +20,5 @@ private:
   ros::NodeHandle *nh;
   std::string nodename;
   std::vector<std::pair<ros::SubscribeOptions, ros::Subscriber *>> subscribers;
-  // std::vector<ros::Subscriber *> subscribers;
-  // TODO: Remove
-  // void forwardData(const sensor_msgs::Joy::ConstPtr& received);
 };
 }
