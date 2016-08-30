@@ -24,13 +24,15 @@ Subscriber::~Subscriber()
   {
     subscribers[i].second->shutdown();
     delete subscribers[i].second;
+    delete coefficients[i];
   }
 }
 
 // Public member functions
 
-void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, string description)
+double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, string description)
 {
+  double* dblptr = 0;
   uint8_t type;
   bool error = false;
   opt.topic = "TobbyAPI/" + uuid + "/" + generateUUID();
@@ -60,8 +62,10 @@ void Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, strin
     feature.Description = description;
     feature.UUID = featureUUID;
     featureMsgs.push_back(feature);
+    dblptr = new double(1.0);
+    coefficients.push_back(dblptr);
   }
-  return;
+  return dblptr;
 }
 
 // Private member functions
@@ -90,6 +94,7 @@ void Subscriber::readConfigMsg(const tobbyapi_msgs::Config::ConstPtr& msg)
           delete subscribers[i].second;
           subscribers[i].second = 0;
         }
+        *coefficients[i] = msg->Coefficient;
         subscribers[i].second = new ros::Subscriber(nh->subscribe(subscribers[i].first));
       }
     }

@@ -20,13 +20,14 @@ public:
   ~Subscriber();
 
   // Public member functions
-  void AddFeature(ros::SubscribeOptions opt, std::string featurename = "", std::string description = "");
+  double *AddFeature(ros::SubscribeOptions opt, std::string featurename = "", std::string description = "");
 
 private:
   // Private member functions
   void readConfigMsg(const tobbyapi_msgs::Config::ConstPtr &msg);
 
   // Private member variables
+  std::vector<double *> coefficients;
   ros::Subscriber configSub;
   ros::NodeHandle *nh;
   std::string nodename;
