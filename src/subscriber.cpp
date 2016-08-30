@@ -30,38 +30,21 @@ Subscriber::~Subscriber()
 
 // Public member functions
 
-double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename, string description)
+double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 {
   double* dblptr = 0;
-  uint8_t type;
-  bool error = false;
-
-  if (opt.datatype == "std_msgs/Float64")
-    type = tapi_msgs::Feature::Type_AnalogValue;
-  else if (opt.datatype == "sensor_msgs/CompressedImage")
-    type = tapi_msgs::Feature::Type_Images;
-  else if (opt.datatype == "std_msgs/Bool")
-    type = tapi_msgs::Feature::Type_Switch;
-  else if (opt.datatype == "std_msgs/Int8")
-    type = tapi_msgs::Feature::Type_Tristate;
-  else
-    error = true;
-
-  if (!error)
-  {
-    ros::Subscriber* subscriber = 0;
-    pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
-    newEntry = make_pair(opt, subscriber);
-    subscribers.push_back(newEntry);
-    tapi_msgs::Feature feature;
-    feature.FeatureType = type;
-    feature.Name = featurename;
-    feature.Description = description;
-    feature.UUID = getNextFeatureUUID();
-    featureMsgs.push_back(feature);
-    dblptr = new double(1.0);
-    coefficients.push_back(dblptr);
-  }
+  ros::Subscriber* subscriber = 0;
+  pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
+  newEntry = make_pair(opt, subscriber);
+  subscribers.push_back(newEntry);
+  tapi_msgs::Feature feature;
+  string temp = opt.datatype;
+  feature.FeatureType = temp;
+  feature.Name = featurename;
+  feature.UUID = getNextFeatureUUID();
+  featureMsgs.push_back(feature);
+  dblptr = new double(1.0);
+  coefficients.push_back(dblptr);
   return dblptr;
 }
 

@@ -7,7 +7,7 @@
 #include "tapi_client.hpp"
 #include "tapi_msgs/Config.h"
 
-#define SubscribeOptionsForAPI(type, buffer, callfctn)                                                                 \
+#define SubscribeOptionsForTapi(type, buffer, callfctn)                                                                \
   ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
 
 namespace Tapi
@@ -20,7 +20,7 @@ public:
   ~Subscriber();
 
   // Public member functions
-  double *AddFeature(ros::SubscribeOptions opt, std::string featurename = "", std::string description = "");
+  double *AddFeature(ros::SubscribeOptions opt, std::string featurename = "");
 
 private:
   // Private member functions

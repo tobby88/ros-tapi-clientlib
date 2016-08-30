@@ -4,6 +4,7 @@
 #include <string>
 #include "ros/ros.h"
 #include "tapi_client.hpp"
+#include "tapi_msgs/Feature.h"
 
 namespace Tapi
 {
@@ -15,8 +16,28 @@ public:
   ~Publisher();
 
   // Public member functions
-  ros::Publisher *AddFeature(uint8_t type, unsigned long queuesize = 1, std::string featurename = "",
-                             std::string description = "");
+  template <typename T>
+  ros::Publisher *AddFeature(std::string featurename = "", unsigned long queuesize = 1)
+  {
+    std::string featureUUID = getNextFeatureUUID();
+    ros::Publisher *publisher = 0;
+    std::string publisherName = "Tapi/" + uuid + "/" + featureUUID;
+
+    publisher = new ros::Publisher(nh->advertise<T>(publisherName, queuesize));
+
+    if (publisher)
+    {
+      publishers.push_back(publisher);
+      tapi_msgs::Feature feature;
+      ros::SubscribeOptions temp;
+      temp = ros::SubscribeOptions::create<T>("", 1, NULL, ros::VoidPtr(), NULL);
+      feature.FeatureType = temp.datatype;
+      feature.Name = featurename;
+      feature.UUID = featureUUID;
+      featureMsgs.push_back(feature);
+    }
+    return publisher;
+  }
 
 private:
   // Private member variables
