@@ -27,7 +27,7 @@ Publisher::~Publisher()
 
 // Public member functions
 
-ros::Publisher* Publisher::AddFeature(uint8_t type, string featurename, string description)
+ros::Publisher* Publisher::AddFeature(uint8_t type, unsigned long queuesize, string featurename, string description)
 {
   string featureUUID = getNextFeatureUUID();
   ros::Publisher* publisher = 0;
@@ -36,16 +36,16 @@ ros::Publisher* Publisher::AddFeature(uint8_t type, string featurename, string d
   switch (type)
   {
     case tapi_msgs::Feature::Type_AnalogValue:
-      publisher = new ros::Publisher(nh->advertise<std_msgs::Float64>(publisherName, 1));
+      publisher = new ros::Publisher(nh->advertise<std_msgs::Float64>(publisherName, queuesize));
       break;
     case tapi_msgs::Feature::Type_Images:
-      publisher = new ros::Publisher(nh->advertise<sensor_msgs::CompressedImage>(publisherName, 1));
+      publisher = new ros::Publisher(nh->advertise<sensor_msgs::CompressedImage>(publisherName, queuesize));
       break;
     case tapi_msgs::Feature::Type_Switch:
-      publisher = new ros::Publisher(nh->advertise<std_msgs::Bool>(publisherName, 1));
+      publisher = new ros::Publisher(nh->advertise<std_msgs::Bool>(publisherName, queuesize));
       break;
     case tapi_msgs::Feature::Type_Tristate:
-      publisher = new ros::Publisher(nh->advertise<std_msgs::Int8>(publisherName, 1));
+      publisher = new ros::Publisher(nh->advertise<std_msgs::Int8>(publisherName, queuesize));
       break;
     default:
       break;

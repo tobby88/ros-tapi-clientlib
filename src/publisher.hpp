@@ -15,7 +15,8 @@ public:
   ~Publisher();
 
   // Public member functions
-  ros::Publisher *AddFeature(uint8_t type, std::string featurename = "", std::string description = "");
+  ros::Publisher *AddFeature(uint8_t type, unsigned long queuesize = 1, std::string featurename = "",
+                             std::string description = "");
 
 private:
   // Private member variables
