@@ -87,15 +87,19 @@ void Subscriber::readConfigMsg(const tobbyapi_msgs::Config::ConstPtr& msg)
           ;
       else
       {
-        subscribers[i].first.topic = "TobbyAPI/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID;
-        if (subscribers[i].second)
+        if (topicName != "TobbyAPI/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID)
         {
-          subscribers[i].second->shutdown();
-          delete subscribers[i].second;
-          subscribers[i].second = 0;
+          topicName = "TobbyAPI/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID;
+          subscribers[i].first.topic = topicName;
+          if (subscribers[i].second)
+          {
+            subscribers[i].second->shutdown();
+            delete subscribers[i].second;
+            subscribers[i].second = 0;
+          }
+          subscribers[i].second = new ros::Subscriber(nh->subscribe(subscribers[i].first));
         }
         *coefficients[i] = msg->Coefficient;
-        subscribers[i].second = new ros::Subscriber(nh->subscribe(subscribers[i].first));
       }
     }
   }
