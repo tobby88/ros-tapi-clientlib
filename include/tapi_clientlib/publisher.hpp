@@ -3,11 +3,11 @@
 
 #include <string>
 #include "ros/ros.h"
-#include "tobbyapi_client.hpp"
+#include "tapi_client.hpp"
 
-namespace TobbyAPI
+namespace Tapi
 {
-class Publisher : public TobbyApiClient
+class Publisher : public TapiClient
 {
 public:
   // Constructor/Destructor

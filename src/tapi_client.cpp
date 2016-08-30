@@ -1,32 +1,32 @@
-#include "tobbyapi_client.hpp"
+#include "tapi_client.hpp"
 #include <uuid/uuid.h>
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>
 #include <fstream>
 #include <thread>
-#include "tobbyapi_msgs/Hello.h"
+#include "tapi_msgs/Hello.h"
 
 using namespace ros;
 using namespace std;
 
-namespace TobbyAPI
+namespace Tapi
 {
 // Constructor/Destructor
 
-TobbyApiClient::TobbyApiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
+TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
   : nh(nh), nodename(nodename), deviceType(deviceType)
 {
   firstRun = true;
   string homedir = getenv("HOME");
-  filenameDevUUID = homedir + "/.ros/tobbyapi_" + nodename + "_dev_uuid.txt";
-  filenameFeatureUUIDs = homedir + "/.ros/tobbyapi_" + nodename + "_feature_uuids.txt";
+  filenameDevUUID = homedir + "/.ros/tapi_" + nodename + "_dev_uuid.txt";
+  filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + "_feature_uuids.txt";
   loadUUIDs();
-  helloClient = nh->serviceClient<tobbyapi_msgs::Hello>("TobbyAPI/HelloServ");
-  heartbeatThread = new thread(&TobbyApiClient::heartbeat, this);
+  helloClient = nh->serviceClient<tapi_msgs::Hello>("Tapi/HelloServ");
+  heartbeatThread = new thread(&TapiClient::heartbeat, this);
 }
 
-TobbyApiClient::~TobbyApiClient()
+TapiClient::~TapiClient()
 {
   heartbeatThread->join();
   delete heartbeatThread;
@@ -35,7 +35,7 @@ TobbyApiClient::~TobbyApiClient()
 
 // Protected member functions
 
-string TobbyApiClient::generateUUID()
+string TapiClient::generateUUID()
 {
   uuid_t uuidt;
   char uuid_array[37];
@@ -47,7 +47,7 @@ string TobbyApiClient::generateUUID()
   return uuid_string;
 }
 
-void TobbyApiClient::heartbeat()
+void TapiClient::heartbeat()
 {
   while (ros::ok())
   {
@@ -63,7 +63,7 @@ void TobbyApiClient::heartbeat()
   }
 }
 
-string TobbyApiClient::getNextFeatureUUID()
+string TapiClient::getNextFeatureUUID()
 {
   string uuid;
   if (featureMsgs.size() < featureUUIDs.size())
@@ -82,19 +82,19 @@ string TobbyApiClient::getNextFeatureUUID()
 
 // Private member functions
 
-bool TobbyApiClient::connect()
+bool TapiClient::connect()
 {
   bool status = false;
-  tobbyapi_msgs::Hello hello;
+  tapi_msgs::Hello hello;
   header.stamp = Time::now();
   header.seq++;
   hello.request.Header = header;
   hello.request.Name = nodename;
   hello.request.UUID = uuid;
   if (deviceType == RECEIVER_DEVICE)
-    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_ReceiverDevice;
+    hello.request.DeviceType = tapi_msgs::HelloRequest::Type_ReceiverDevice;
   else if (deviceType == SENDER_DEVICE)
-    hello.request.DeviceType = tobbyapi_msgs::HelloRequest::Type_SenderDevice;
+    hello.request.DeviceType = tapi_msgs::HelloRequest::Type_SenderDevice;
   else
   {
     ROS_ERROR("Unknown type of device");
@@ -123,7 +123,7 @@ bool TobbyApiClient::connect()
   return status;
 }
 
-void TobbyApiClient::loadUUIDs()
+void TapiClient::loadUUIDs()
 {
   // Read (or generate, if not existing) Device-UUID
   string uuid;

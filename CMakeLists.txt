@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(tobbyapi_clientlib)
+project(tapi_clientlib)
 
 # Use specified C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-  tobbyapi_msgs
+  tapi_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -107,8 +107,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES tobbyapi_clientlib
-  CATKIN_DEPENDS message_runtime roscpp std_msgs tobbyapi_msgs
+  LIBRARIES tapi_clientlib
+  CATKIN_DEPENDS message_runtime roscpp std_msgs tapi_msgs
 #  DEPENDS system_lib
 )
 
@@ -124,29 +124,29 @@ include_directories(
 )
 
 ## Declare a C++ library
-add_library(tobbyapi_clientlib
-  include/tobbyapi_clientlib/publisher.hpp
-  include/tobbyapi_clientlib/subscriber.hpp
-  include/tobbyapi_clientlib/tobbyapi_client.hpp
+add_library(tapi_clientlib
+  include/tapi_clientlib/publisher.hpp
+  include/tapi_clientlib/subscriber.hpp
+  include/tapi_clientlib/tapi_client.hpp
   src/publisher.cpp
   src/subscriber.cpp
-  src/tobbyapi_client.cpp
+  src/tapi_client.cpp
 )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-add_dependencies(tobbyapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(tapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(tobbyapi_clientlib_node src/tobbyapi_clientlib_node.cpp)
+# add_executable(tapi_clientlib src/tapi_clientlib.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(tobbyapi_clientlib_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(tapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(tobbyapi_clientlib
+target_link_libraries(tapi_clientlib
   ${catkin_LIBRARIES}
   uuid
 )
@@ -166,7 +166,7 @@ target_link_libraries(tobbyapi_clientlib
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS tobbyapi_clientlib tobbyapi_clientlib
+install(TARGETS tapi_clientlib tapi_clientlib
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -191,7 +191,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_tobbyapi_clientlib.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_tapi_clientlib.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

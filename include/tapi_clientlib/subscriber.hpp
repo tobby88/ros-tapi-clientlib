@@ -4,15 +4,15 @@
 #include <string>
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
-#include "tobbyapi_client.hpp"
-#include "tobbyapi_msgs/Config.h"
+#include "tapi_client.hpp"
+#include "tapi_msgs/Config.h"
 
-#define SubscribeOptionsForAPI(type, buffer, callfctn)                                                                 \
+#define SubscribeOptionsForTapi(type, buffer, callfctn)                                                                 \
   ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
 
-namespace TobbyAPI
+namespace Tapi
 {
-class Subscriber : public TobbyApiClient
+class Subscriber : public TapiClient
 {
 public:
   // Constructor/Destructor
@@ -24,7 +24,7 @@ public:
 
 private:
   // Private member functions
-  void readConfigMsg(const tobbyapi_msgs::Config::ConstPtr &msg);
+  void readConfigMsg(const tapi_msgs::Config::ConstPtr &msg);
 
   // Private member variables
   std::vector<double *> coefficients;

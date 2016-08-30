@@ -1,5 +1,5 @@
-#ifndef TOBBYAPI_CLIENT_H
-#define TOBBYAPI_CLIENT_H
+#ifndef TAPI_CLIENT_H
+#define TAPI_CLIENT_H
 
 #define WAIT_MS_ON_ERROR 1000L
 #define SENDER_DEVICE 1
@@ -10,17 +10,17 @@
 #include <vector>
 #include "ros/ros.h"
 #include "std_msgs/Header.h"
-#include "tobbyapi_msgs/Feature.h"
-#include "tobbyapi_msgs/HelloRequest.h"
+#include "tapi_msgs/Feature.h"
+#include "tapi_msgs/HelloRequest.h"
 
-namespace TobbyAPI
+namespace Tapi
 {
-class TobbyApiClient
+class TapiClient
 {
 public:
   // Constructor/Destructor
-  TobbyApiClient(ros::NodeHandle* nh, std::string nodename, uint8_t deviceType);
-  ~TobbyApiClient();
+  TapiClient(ros::NodeHandle* nh, std::string nodename, uint8_t deviceType);
+  ~TapiClient();
 
 protected:
   // Protected meber functions
@@ -28,7 +28,7 @@ protected:
   std::string getNextFeatureUUID();
 
   // Protected member variables
-  std::vector<tobbyapi_msgs::Feature> featureMsgs;
+  std::vector<tapi_msgs::Feature> featureMsgs;
   std::string uuid;
 
 private:
@@ -51,4 +51,4 @@ private:
   std::string nodename;
 };
 }
-#endif  // TOBBYAPI_CLIENT_H
+#endif  // TAPI_CLIENT_H
