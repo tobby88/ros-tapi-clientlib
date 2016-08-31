@@ -47,6 +47,7 @@ find_package(catkin REQUIRED
 add_message_files(DIRECTORY msg
   FILES
   Connection.msg
+  Device.msg
   Feature.msg
 )
 
