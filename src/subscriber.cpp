@@ -1,4 +1,4 @@
-#include "subscriber.hpp"
+#include "include/tapi_clientlib/subscriber.hpp"
 #include "sensor_msgs/CompressedImage.h"
 #include "std_msgs/Bool.h"
 #include "std_msgs/Float64.h"
