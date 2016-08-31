@@ -55,6 +55,7 @@ add_message_files(DIRECTORY msg
 ## Generate services in the 'srv' folder
 add_service_files(DIRECTORY srv
   FILES
+  GetDeviceList.srv
   Hello.srv
 )
 
