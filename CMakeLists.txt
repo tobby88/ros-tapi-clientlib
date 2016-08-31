@@ -46,6 +46,7 @@ find_package(catkin REQUIRED
 ## Generate messages in the 'msg' folder
 add_message_files(DIRECTORY msg
   FILES
+  Connect.msg
   Connection.msg
   Device.msg
   Feature.msg
