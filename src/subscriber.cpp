@@ -1,8 +1,4 @@
 #include "include/tapi_clientlib/subscriber.hpp"
-#include "sensor_msgs/CompressedImage.h"
-#include "std_msgs/Bool.h"
-#include "std_msgs/Float64.h"
-#include "std_msgs/Int8.h"
 #include "tapi_msgs/Feature.h"
 
 using namespace std;
