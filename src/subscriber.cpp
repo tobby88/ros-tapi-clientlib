@@ -46,7 +46,7 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 
 // Private member functions
 
-void Subscriber::readConfigMsg(const tapi_msgs::Config::ConstPtr& msg)
+void Subscriber::readConfigMsg(const tapi_msgs::Connection::ConstPtr& msg)
 {
   for (int i = 0; i < featureMsgs.size(); i++)
   {
