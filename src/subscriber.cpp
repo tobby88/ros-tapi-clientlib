@@ -20,6 +20,7 @@ Subscriber::~Subscriber()
   {
     subscribers[i].second->shutdown();
     delete subscribers[i].second;
+    subscribers[i].second = 0;
     delete coefficients[i];
   }
 }
@@ -63,7 +64,7 @@ void Subscriber::readConfigMsg(const tapi_msgs::Connection::ConstPtr& msg)
           ;
       else
       {
-        if (topicName != "Tapi/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID)
+        if (topicName != "Tapi/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID || subscribers[i].second == 0)
         {
           topicName = "Tapi/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID;
           subscribers[i].first.topic = topicName;
