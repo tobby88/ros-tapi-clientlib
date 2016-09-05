@@ -1,3 +1,3 @@
-bool get
+bool Get
 ---
 Connection[] Connections

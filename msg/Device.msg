@@ -1,7 +1,7 @@
 string Name
 string UUID
-uint8 Type_ReceiverDevice=1
-uint8 Type_SenderDevice=2
+uint8 Type_Publisher=1
+uint8 Type_Subscriber=2
 uint8 DeviceType
 Feature[] Features
 uint32 Heartbeat
