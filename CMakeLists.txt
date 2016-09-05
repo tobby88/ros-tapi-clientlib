@@ -8,7 +8,9 @@ set(CMAKE_CXX_STANDARD 11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  message_generation
   roscpp
+  std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -48,18 +50,21 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(DIRECTORY msg
+  FILES
+  Connect.msg
+  Connection.msg
+  Device.msg
+  Feature.msg
+)
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(DIRECTORY srv
+  FILES
+  GetConnectionList.srv
+  GetDeviceList.srv
+  Hello.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -69,10 +74,10 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -125,7 +130,7 @@ include_directories(
 add_library(tapi_lib
   include/tapi_lib/publisher.hpp
   include/tapi_lib/subscriber.hpp
-  include/tapi_tlib/tapi_client.hpp
+  include/tapi_lib/tapi_client.hpp
   src/publisher.cpp
   src/subscriber.cpp
   src/tapi_client.cpp
