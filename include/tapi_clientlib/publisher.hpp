@@ -25,7 +25,7 @@ public:
   {
     std::string featureUUID = getNextFeatureUUID();
     ros::Publisher *publisher = 0;
-    std::string publisherName = "Tapi/" + uuid + "/" + featureUUID;
+    std::string publisherName = "/Tapi/" + uuid + "/" + featureUUID;
 
     publisher = new ros::Publisher(nh->advertise<T>(publisherName, queuesize));
 

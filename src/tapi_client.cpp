@@ -23,7 +23,7 @@ TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
   filenameDevUUID = homedir + "/.ros/tapi_" + nodename + "_dev_uuid.txt";
   filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + "_feature_uuids.txt";
   loadUUIDs();
-  helloClient = nh->serviceClient<tapi_msgs::Hello>("Tapi/HelloServ");
+  helloClient = nh->serviceClient<tapi_msgs::Hello>("/Tapi/HelloServ");
   heartbeatThread = new thread(&TapiClient::heartbeat, this);
 }
 

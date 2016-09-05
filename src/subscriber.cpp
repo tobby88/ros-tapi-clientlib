@@ -11,7 +11,7 @@ Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
   : TapiClient(nh, nodename, SUBSCRIBER_DEVICE), nh(nh), nodename(nodename)
 {
   subscribers.clear();
-  configSub = nh->subscribe("Tapi/Config", 1000, &Subscriber::readConfigMsg, this);
+  configSub = nh->subscribe("/Tapi/Config", 1000, &Subscriber::readConfigMsg, this);
 }
 
 Subscriber::~Subscriber()
@@ -64,9 +64,9 @@ void Subscriber::readConfigMsg(const tapi_msgs::Connection::ConstPtr& msg)
           ;
       else
       {
-        if (topicName != "Tapi/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID || subscribers[i].second == 0)
+        if (topicName != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID || subscribers[i].second == 0)
         {
-          topicName = "Tapi/" + msg->SenderUUID + "/" + msg->SenderFeatureUUID;
+          topicName = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
           subscribers[i].first.topic = topicName;
           if (subscribers[i].second)
           {
