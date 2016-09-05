@@ -7,7 +7,7 @@ namespace Tapi
 // Constructor/Destructor
 
 Publisher::Publisher(ros::NodeHandle* nh, string nodename)
-  : TapiClient(nh, nodename, SENDER_DEVICE), nh(nh), nodename(nodename)
+  : TapiClient(nh, nodename, PUBLISHER_DEVICE), nh(nh), nodename(nodename)
 {
 }
 

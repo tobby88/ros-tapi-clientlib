@@ -2,8 +2,8 @@
 #define TAPI_CLIENT_H
 
 #define WAIT_MS_ON_ERROR 1000L
-#define SENDER_DEVICE 1
-#define RECEIVER_DEVICE 2
+#define PUBLISHER_DEVICE 1
+#define SUBSCRIBER_DEVICE 2
 
 #include <string>
 #include <thread>

@@ -92,10 +92,10 @@ bool TapiClient::connect()
   hello.request.Header = header;
   hello.request.Name = nodename;
   hello.request.UUID = uuid;
-  if (deviceType == RECEIVER_DEVICE)
-    hello.request.DeviceType = tapi_msgs::HelloRequest::Type_ReceiverDevice;
-  else if (deviceType == SENDER_DEVICE)
-    hello.request.DeviceType = tapi_msgs::HelloRequest::Type_SenderDevice;
+  if (deviceType == SUBSCRIBER_DEVICE)
+    hello.request.DeviceType = tapi_msgs::Device::Type_Subscriber;
+  else if (deviceType == PUBLISHER_DEVICE)
+    hello.request.DeviceType = tapi_msgs::Device::Type_Publisher;
   else
   {
     ROS_ERROR("Unknown type of device");

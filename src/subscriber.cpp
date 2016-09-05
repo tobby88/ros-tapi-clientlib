@@ -8,7 +8,7 @@ namespace Tapi
 // Constructor/Destructor
 
 Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
-  : TapiClient(nh, nodename, RECEIVER_DEVICE), nh(nh), nodename(nodename)
+  : TapiClient(nh, nodename, SUBSCRIBER_DEVICE), nh(nh), nodename(nodename)
 {
   subscribers.clear();
   configSub = nh->subscribe("Tapi/Config", 1000, &Subscriber::readConfigMsg, this);
@@ -51,9 +51,9 @@ void Subscriber::readConfigMsg(const tapi_msgs::Connection::ConstPtr& msg)
 {
   for (int i = 0; i < featureMsgs.size(); i++)
   {
-    if (msg->ReceiverUUID == uuid && msg->ReceiverFeatureUUID == featureMsgs[i].UUID)
+    if (msg->SubscriberUUID == uuid && msg->SubscriberFeatureUUID == featureMsgs[i].UUID)
     {
-      if (msg->SenderUUID == "0" || msg->SenderFeatureUUID == "0")
+      if (msg->PublisherUUID == "0" || msg->PublisherFeatureUUID == "0")
         if (subscribers[i].second)
         {
           subscribers[i].second->shutdown();
