@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>tapi_clientlib</name>
-  <version>1.3.0</version>
-  <description>Library to easily build clients for Tapi</description>
+  <name>tapi_lib</name>
+  <version>2.0.0</version>
+  <description>Library to easily build nodes with Tapi</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <maintainer email="tobby@tobby.eu">tobby</maintainer>
@@ -14,7 +14,7 @@
 
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <url type="website">https://github.com/tobby88/ros-tapi-clientlib</url>
+  <url type="website">https://github.com/tobby88/ros-tapi-lib</url>
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
   <!-- Authors do not have to be maintianers, but could be -->
@@ -24,7 +24,6 @@
   <!-- Dependencies can be catkin packages or system dependencies -->
   <buildtool_depend>catkin</buildtool_depend>
   <depend>roscpp</depend>
-  <depend>tapi_msgs</depend>
   <exec_depend>message_runtime</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(tapi_clientlib)
+project(tapi_lib)
 
 # Use specified C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -9,7 +9,6 @@ set(CMAKE_CXX_STANDARD 11)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  tapi_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -106,8 +105,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES tapi_clientlib
-  CATKIN_DEPENDS message_runtime roscpp tapi_msgs
+  LIBRARIES tapi_lib
+  CATKIN_DEPENDS message_runtime roscpp
 #  DEPENDS system_lib
 )
 
@@ -123,10 +122,10 @@ include_directories(
 )
 
 ## Declare a C++ library
-add_library(tapi_clientlib
-  include/tapi_clientlib/publisher.hpp
-  include/tapi_clientlib/subscriber.hpp
-  include/tapi_clientlib/tapi_client.hpp
+add_library(tapi_lib
+  include/tapi_lib/publisher.hpp
+  include/tapi_lib/subscriber.hpp
+  include/tapi_tlib/tapi_client.hpp
   src/publisher.cpp
   src/subscriber.cpp
   src/tapi_client.cpp
@@ -135,17 +134,17 @@ add_library(tapi_clientlib
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-add_dependencies(tapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(tapi_lib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(tapi_clientlib src/tapi_clientlib.cpp)
+# add_executable(tapi_lib src/tapi_lib.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(tapi_clientlib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(tapi_lib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(tapi_clientlib
+target_link_libraries(tapi_lib
   ${catkin_LIBRARIES}
   uuid
 )
@@ -165,7 +164,7 @@ target_link_libraries(tapi_clientlib
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS tapi_clientlib tapi_clientlib
+install(TARGETS tapi_lib tapi_lib
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -190,7 +189,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_tapi_clientlib.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_tapi_lib.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
