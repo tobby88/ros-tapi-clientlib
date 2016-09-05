@@ -19,6 +19,7 @@ public:
   ~Publisher();
 
   // Public member functions
+  // Templated functions
   template <typename T>
   ros::Publisher *AddFeature(std::string featurename = "", unsigned long queuesize = 1)
   {
