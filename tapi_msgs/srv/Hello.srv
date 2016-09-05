@@ -1,0 +1,10 @@
+Header Header
+string Name
+string UUID
+uint8 DeviceType
+Feature[] Features
+---
+uint8 StatusError=0
+uint8 StatusOK=1
+uint8 Status
+uint32 Heartbeat

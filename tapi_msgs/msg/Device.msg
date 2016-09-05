@@ -1,0 +1,10 @@
+string Name
+string UUID
+uint8 Type_Publisher=1
+uint8 Type_Subscriber=2
+uint8 DeviceType
+Feature[] Features
+uint32 Heartbeat
+bool Active
+time LastSeen
+uint32 LastSeq

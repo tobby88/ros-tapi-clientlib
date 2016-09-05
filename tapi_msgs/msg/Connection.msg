@@ -1,0 +1,5 @@
+string PublisherUUID
+string PublisherFeatureUUID
+string SubscriberUUID
+string SubscriberFeatureUUID
+float64 Coefficient

@@ -1,0 +1,3 @@
+string Feature1UUID
+string Feature2UUID
+float64 Coefficient
