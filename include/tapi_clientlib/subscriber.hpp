@@ -2,7 +2,10 @@
 #define SUBSCRIBER_H
 
 #include <string>
-#include "ros/ros.h"
+#include <vector>
+#include "ros/node_handle.h"
+#include "ros/subscribe_options.h"
+#include "ros/subscriber.h"
 #include "tapi_client.hpp"
 #include "tapi_msgs/Connection.h"
 

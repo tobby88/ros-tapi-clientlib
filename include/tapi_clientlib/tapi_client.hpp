@@ -8,10 +8,10 @@
 #include <string>
 #include <thread>
 #include <vector>
-#include "ros/ros.h"
+#include "ros/node_handle.h"
+#include "ros/service_client.h"
 #include "std_msgs/Header.h"
 #include "tapi_msgs/Feature.h"
-#include "tapi_msgs/HelloRequest.h"
 
 namespace Tapi
 {

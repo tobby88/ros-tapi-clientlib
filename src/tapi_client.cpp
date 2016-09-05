@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <thread>
+#include "tapi_msgs/Device.h"
 #include "tapi_msgs/Hello.h"
 
 using namespace ros;
