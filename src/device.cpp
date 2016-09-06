@@ -1,4 +1,4 @@
-#include "device.hpp"
+#include "include/tapi_lib/device.hpp"
 
 using namespace std;
 
