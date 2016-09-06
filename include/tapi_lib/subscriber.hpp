@@ -10,7 +10,7 @@
 #include "tapi_lib/Connection.h"
 
 #define SubscribeOptionsForTapi(type, buffer, callfctn)                                                                \
-  ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
+  ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(this), NULL)
 
 namespace Tapi
 {
