@@ -10,7 +10,6 @@ namespace Tapi
 Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
   : TapiClient(nh, nodename, SUBSCRIBER_DEVICE), nh(nh), nodename(nodename)
 {
-  subscribers.clear();
   configSub = nh->subscribe("/Tapi/Config", 1000, &Subscriber::readConfigMsg, this);
 }
 
