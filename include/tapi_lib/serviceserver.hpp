@@ -8,7 +8,7 @@
 #include "ros/service_server.h"
 #include "tapi_client.hpp"
 
-#define ServiceOptionsForTapi(type, callfctn)                                                                          \
+#define ServiceServerOptionsForTapi(type, callfctn)                                                                          \
   ros::AdvertiseServiceOptions::create<type>("", boost::bind((callfctn), this, _1, _2), ros::VoidPtr(this), NULL)
 
 namespace Tapi
