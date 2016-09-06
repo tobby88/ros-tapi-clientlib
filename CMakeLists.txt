@@ -135,12 +135,14 @@ add_library(tapi_lib
   include/tapi_lib/device.hpp
   include/tapi_lib/feature.hpp
   include/tapi_lib/publisher.hpp
+  include/tapi_lib/serviceserver.hpp
   include/tapi_lib/subscriber.hpp
   include/tapi_lib/tapi_client.hpp
   src/connection.cpp
   src/device.cpp
   src/feature.cpp
   src/publisher.cpp
+  src/serviceserver.cpp
   src/subscriber.cpp
   src/tapi_client.cpp
 )
