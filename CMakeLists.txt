@@ -56,6 +56,8 @@ add_message_files(DIRECTORY msg
   Connection.msg
   Device.msg
   Feature.msg
+  State.msg
+  Transition.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -63,6 +65,7 @@ add_service_files(DIRECTORY srv
   FILES
   GetConnectionList.srv
   GetDeviceList.srv
+  GetStateMachine.srv
   Hello.srv
 )
 
