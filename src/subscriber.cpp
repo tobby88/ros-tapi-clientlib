@@ -15,6 +15,7 @@ Subscriber::Subscriber(ros::NodeHandle* nh, string nodename)
 
 Subscriber::~Subscriber()
 {
+  configSub.shutdown();
   for (int i = 0; i < subscribers.size(); i++)
   {
     subscribers[i].second->shutdown();
