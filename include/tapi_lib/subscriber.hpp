@@ -7,7 +7,7 @@
 #include "ros/subscribe_options.h"
 #include "ros/subscriber.h"
 #include "tapi_client.hpp"
-#include "tapi_msgs/Connection.h"
+#include "tapi_lib/Connection.h"
 
 #define SubscribeOptionsForTapi(type, buffer, callfctn)                                                                \
   ros::SubscribeOptions::create<type>("", buffer, boost::bind((callfctn), this, _1), ros::VoidPtr(), NULL)
@@ -26,7 +26,7 @@ public:
 
 private:
   // Private member functions
-  void readConfigMsg(const tapi_msgs::Connection::ConstPtr &msg);
+  void readConfigMsg(const tapi_lib::Connection::ConstPtr &msg);
 
   // Private member variables
   std::vector<double *> coefficients;

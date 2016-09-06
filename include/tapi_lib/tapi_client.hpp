@@ -11,7 +11,7 @@
 #include "ros/node_handle.h"
 #include "ros/service_client.h"
 #include "std_msgs/Header.h"
-#include "tapi_msgs/Feature.h"
+#include "tapi_lib/Feature.h"
 
 namespace Tapi
 {
@@ -28,7 +28,7 @@ protected:
   std::string getNextFeatureUUID();
 
   // Protected member variables
-  std::vector<tapi_msgs::Feature> featureMsgs;
+  std::vector<tapi_lib::Feature> featureMsgs;
   std::string uuid;
 
 private:

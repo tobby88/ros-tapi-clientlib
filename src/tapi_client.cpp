@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <fstream>
 #include <thread>
-#include "tapi_msgs/Device.h"
-#include "tapi_msgs/Hello.h"
+#include "tapi_lib/Device.h"
+#include "tapi_lib/Hello.h"
 
 using namespace ros;
 using namespace std;
@@ -23,7 +23,7 @@ TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
   filenameDevUUID = homedir + "/.ros/tapi_" + nodename + "_dev_uuid.txt";
   filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + "_feature_uuids.txt";
   loadUUIDs();
-  helloClient = nh->serviceClient<tapi_msgs::Hello>("/Tapi/HelloServ");
+  helloClient = nh->serviceClient<tapi_lib::Hello>("/Tapi/HelloServ");
   heartbeatThread = new thread(&TapiClient::heartbeat, this);
 }
 
@@ -86,16 +86,16 @@ string TapiClient::getNextFeatureUUID()
 bool TapiClient::connect()
 {
   bool status = false;
-  tapi_msgs::Hello hello;
+  tapi_lib::Hello hello;
   header.stamp = Time::now();
   header.seq++;
   hello.request.Header = header;
   hello.request.Name = nodename;
   hello.request.UUID = uuid;
   if (deviceType == SUBSCRIBER_DEVICE)
-    hello.request.DeviceType = tapi_msgs::Device::Type_Subscriber;
+    hello.request.DeviceType = tapi_lib::Device::Type_Subscriber;
   else if (deviceType == PUBLISHER_DEVICE)
-    hello.request.DeviceType = tapi_msgs::Device::Type_Publisher;
+    hello.request.DeviceType = tapi_lib::Device::Type_Publisher;
   else
   {
     ROS_ERROR("Unknown type of device");

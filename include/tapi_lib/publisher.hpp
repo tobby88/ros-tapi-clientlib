@@ -7,7 +7,7 @@
 #include "ros/publisher.h"
 #include "ros/subscribe_options.h"
 #include "tapi_client.hpp"
-#include "tapi_msgs/Feature.h"
+#include "tapi_lib/Feature.h"
 
 namespace Tapi
 {
@@ -32,7 +32,7 @@ public:
     if (publisher)
     {
       publishers.push_back(publisher);
-      tapi_msgs::Feature feature;
+      tapi_lib::Feature feature;
       ros::SubscribeOptions temp;
       temp = ros::SubscribeOptions::create<T>("", 1, NULL, ros::VoidPtr(), NULL);
       feature.FeatureType = temp.datatype;

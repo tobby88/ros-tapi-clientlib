@@ -1,5 +1,5 @@
 #include "include/tapi_lib/subscriber.hpp"
-#include "tapi_msgs/Feature.h"
+#include "tapi_lib/Feature.h"
 
 using namespace std;
 
@@ -34,7 +34,7 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
   pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
   newEntry = make_pair(opt, subscriber);
   subscribers.push_back(newEntry);
-  tapi_msgs::Feature feature;
+  tapi_lib::Feature feature;
   string temp = opt.datatype;
   feature.FeatureType = temp;
   feature.Name = featurename;
@@ -47,7 +47,7 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 
 // Private member functions
 
-void Subscriber::readConfigMsg(const tapi_msgs::Connection::ConstPtr& msg)
+void Subscriber::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
 {
   for (int i = 0; i < featureMsgs.size(); i++)
   {
