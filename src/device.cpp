@@ -37,11 +37,6 @@ Feature* Device::GetFeatureByUUID(string uuid)
     return 0;
 }
 
-map<string, Feature> Device::GetFeatureMap()
-{
-  return features;
-}
-
 unsigned long Device::GetHeartbeat()
 {
   return heartbeat;
