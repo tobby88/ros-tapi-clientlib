@@ -8,7 +8,6 @@ namespace Tapi
 
 Feature::Feature(string type, string name, string uuid) : type(type), name(name), uuid(uuid)
 {
-  connections = 0;
 }
 
 Feature::~Feature()
@@ -16,16 +15,6 @@ Feature::~Feature()
 }
 
 // Public member functions
-
-void Feature::DecrementConnections()
-{
-  connections--;
-}
-
-int Feature::GetConnectionCount()
-{
-  return connections;
-}
 
 string Feature::GetName() const
 {
@@ -43,11 +32,6 @@ string Feature::GetType() const
 string Feature::GetUUID() const
 {
   return uuid;
-}
-
-void Feature::IncrementConnections()
-{
-  connections++;
 }
 
 bool Feature::operator==(const Feature &other) const

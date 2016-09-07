@@ -13,12 +13,9 @@ public:
   ~Feature();
 
   // Public member functions
-  void DecrementConnections();
-  int GetConnectionCount();
   std::string GetName() const;
   std::string GetType() const;
   std::string GetUUID() const;
-  void IncrementConnections();
   bool operator==(const Feature &other) const;
   void Update(std::string type, std::string name);
 
@@ -27,7 +24,6 @@ private:
   std::string type;
   std::string name;
   std::string uuid;
-  int connections;
 };
 }
 
