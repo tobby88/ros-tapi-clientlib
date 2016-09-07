@@ -93,6 +93,11 @@ void Device::Update(uint8_t type, string name, unsigned long lastSeq, ros::Time 
   this->lastSeq = lastSeq;
   this->lastSeen = lastSeen;
   this->heartbeat = heartbeat;
+  if(featureUpdate.size() == 0)
+  {
+    features.clear();
+    return;
+  }
   if (features.size() == 0)
   {
     features = featureUpdate;
