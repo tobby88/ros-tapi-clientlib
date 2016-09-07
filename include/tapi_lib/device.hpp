@@ -21,6 +21,7 @@ public:
   bool Active();
   void Deactivate();
   Feature* GetFeatureByUUID(std::string uuid);
+  std::map<std::string, Feature> GetFeatureMap();
   unsigned long GetHeartbeat();
   ros::Time GetLastSeen();
   unsigned long GetLastSeq();
