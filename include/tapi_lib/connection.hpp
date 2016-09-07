@@ -10,7 +10,7 @@ class Connection
 public:
   // Constructor/Destructor
   Connection(std::string publisherUUID, std::string publisherFeatureUUID, std::string subscriberUUID,
-             std::string subscriberFeatureUUID, double coefficient);
+             std::string subscriberFeatureUUID, double coefficient = 1.0);
   ~Connection();
 
   // Public member functions
