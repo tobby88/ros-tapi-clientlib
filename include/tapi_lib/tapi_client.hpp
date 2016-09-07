@@ -24,6 +24,7 @@ public:
 
 protected:
   // Protected meber functions
+  bool connect();
   std::string generateUUID();
   std::string getNextFeatureUUID();
 
@@ -33,7 +34,6 @@ protected:
 
 private:
   // Private member functions
-  bool connect();
   void heartbeat();
   void loadUUIDs();
 

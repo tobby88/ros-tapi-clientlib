@@ -44,6 +44,7 @@ public:
     feature.UUID = featureUUID;
     featureMsgs.push_back(feature);
     clientptr = &clients.at(clients.size() - 1).second;
+    connect();
     return clientptr;
   }
 

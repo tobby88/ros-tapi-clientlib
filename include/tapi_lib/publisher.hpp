@@ -40,6 +40,7 @@ public:
       feature.UUID = featureUUID;
       featureMsgs.push_back(feature);
     }
+    connect();
     return publisher;
   }
 

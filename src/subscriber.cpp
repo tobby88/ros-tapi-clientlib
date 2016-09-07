@@ -42,6 +42,7 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
   featureMsgs.push_back(feature);
   dblptr = new double(1.0);
   coefficients.push_back(dblptr);
+  connect();
   return dblptr;
 }
 

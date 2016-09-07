@@ -44,6 +44,7 @@ ros::ServiceServer* ServiceServer::AddFeature(ros::AdvertiseServiceOptions opt, 
     feature.UUID = featureUUID;
     featureMsgs.push_back(feature);
   }
+  connect();
   return service;
 }
 }
