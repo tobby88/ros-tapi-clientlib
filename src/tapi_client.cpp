@@ -25,8 +25,8 @@ TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
   loadUUIDs();
   helloClient = nh->serviceClient<tapi_lib::Hello>("/Tapi/HelloServ");
   heartbeatThread = new thread(&TapiClient::heartbeat, this);
-  if (deviceType > 2)
-    deviceType -= 2;
+  if (this->deviceType > 2)
+    this->deviceType -= 2;
 }
 
 TapiClient::~TapiClient()
