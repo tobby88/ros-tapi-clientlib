@@ -7,7 +7,7 @@ namespace Tapi
 // Constructor/Destructor
 
 ServiceServer::ServiceServer(ros::NodeHandle* nh, string nodename)
-  : TapiClient(nh, nodename, PUBLISHER_DEVICE), nh(nh), nodename(nodename)
+  : TapiClient(nh, nodename, SERVICE_SERVER), nh(nh), nodename(nodename)
 {
 }
 

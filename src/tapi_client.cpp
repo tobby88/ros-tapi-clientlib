@@ -20,11 +20,13 @@ TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
 {
   firstRun = true;
   string homedir = getenv("HOME");
-  filenameDevUUID = homedir + "/.ros/tapi_" + nodename + "_dev_uuid.txt";
-  filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + "_feature_uuids.txt";
+  filenameDevUUID = homedir + "/.ros/tapi_" + nodename + to_string((int)deviceType) + "_dev_uuid.txt";
+  filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + to_string((int)deviceType) + "_feature_uuids.txt";
   loadUUIDs();
   helloClient = nh->serviceClient<tapi_lib::Hello>("/Tapi/HelloServ");
   heartbeatThread = new thread(&TapiClient::heartbeat, this);
+  if (deviceType > 2)
+    deviceType -= 2;
 }
 
 TapiClient::~TapiClient()

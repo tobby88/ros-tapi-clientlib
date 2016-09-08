@@ -4,6 +4,8 @@
 #define WAIT_MS_ON_ERROR 1000L
 #define PUBLISHER_DEVICE 1
 #define SUBSCRIBER_DEVICE 2
+#define SERVICE_SERVER 3
+#define SERVICE_CLIENT 4
 
 #include <string>
 #include <thread>

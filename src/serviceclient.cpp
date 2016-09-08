@@ -7,7 +7,7 @@ namespace Tapi
 // Constructor/Destructor
 
 ServiceClient::ServiceClient(ros::NodeHandle* nh, string nodename)
-  : TapiClient(nh, nodename, SUBSCRIBER_DEVICE), nh(nh), nodename(nodename)
+  : TapiClient(nh, nodename, SERVICE_CLIENT), nh(nh), nodename(nodename)
 {
   configSub = nh->subscribe("/Tapi/Config", 1000, &ServiceClient::readConfigMsg, this);
 }
