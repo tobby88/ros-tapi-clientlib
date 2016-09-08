@@ -116,7 +116,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES tapi_lib
-  CATKIN_DEPENDS message_runtime roscpp
+  CATKIN_DEPENDS message_runtime roscpp std_msgs
 #  DEPENDS system_lib
 )
 
