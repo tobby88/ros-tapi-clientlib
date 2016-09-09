@@ -88,7 +88,7 @@ void Device::Update(uint8_t type, string name, unsigned long lastSeq, ros::Time 
   this->lastSeq = lastSeq;
   this->lastSeen = lastSeen;
   this->heartbeat = heartbeat;
-  if(featureUpdate.size() == 0)
+  if (featureUpdate.size() == 0)
   {
     features.clear();
     return;
@@ -135,6 +135,12 @@ void Device::Update(uint8_t type, string name, unsigned long lastSeq, ros::Time 
 
 bool Device::compareFeatureNames(const Feature* first, const Feature* second)
 {
-  return first->GetName() < second->GetName();
+  string temp1, temp2;
+  temp1 = first->GetName();
+  temp2 = second->GetName();
+  transform(temp1.begin(), temp1.end(), temp1.begin(), ::towlower);
+  transform(temp2.begin(), temp2.end(), temp2.begin(), ::towlower);
+  bool result = temp1 < temp2;
+  return result;
 }
 }
