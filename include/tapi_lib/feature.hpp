@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file feature.hpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 20 Nov 2015
+ * \brief Declaration of the Tapi::Feature-class and definition of its member variables
+ */
+
 #ifndef FEATURE_H
 #define FEATURE_H
 
@@ -39,24 +47,74 @@
 
 namespace Tapi
 {
+/*!
+ * \brief Store information about a feature of a device
+ * \author Tobias Holst
+ * \version 2.1.1
+ */
 class Feature
 {
 public:
   // Constructor/Destructor
+
+  /*!
+   * \brief Create an object which stores information about a device's feature
+   * \param type Type of the feature (topic type like \c "std_msgs/Bool")
+   * \param name Name of the feature
+   * \param uuid Unique ID of the feature
+   */
   Feature(std::string type, std::string name, std::string uuid);
+
+  //! Empty destructor
   ~Feature();
 
   // Public member functions
+
+  /*!
+   * \brief Get the name of the feature
+   * \return Name of the feature
+   * \see Tapi::Feature::name
+   */
   std::string GetName() const;
+
+  /*!
+   * \brief Get the type of the feature
+   * \return Type of the feature (topic type like \c "std_msgs/Bool")
+   * \see Tapi::Feature::type
+   */
   std::string GetType() const;
+
+  /*!
+   * \brief Get the unique ID of the feature
+   * \return Unique ID of the feature
+   * \see Tapi::Feature::uuid
+   */
   std::string GetUUID() const;
+
+  /*!
+   * \brief Override the \c operator \c == to compare two features by \c ==
+   * \param other The \c Feature behind the \c ==
+   * \return \c true if both features contain the same data in its member variables, \c false if not
+   */
   bool operator==(const Feature &other) const;
+
+  /*!
+   * \brief Update the data of the Feature
+   * \param type Type of the feature (topic type like \c "std_msgs/Bool")
+   * \param name Name of the feature
+   */
   void Update(std::string type, std::string name);
 
 private:
   // Private member variables
+
+  //! Type of the feature (topic type like \c "std_msgs/Bool")
   std::string type;
+
+  //! Name of the feature
   std::string name;
+
+  //! Unique ID of the feature
   std::string uuid;
 };
 }

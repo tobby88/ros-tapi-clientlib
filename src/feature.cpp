@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file feature.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 20 Nov 2015
+ * \brief Definition of the Tapi::Feature-class and its member functions
+ */
+
 #include "include/tapi_lib/feature.hpp"
 
 using namespace std;

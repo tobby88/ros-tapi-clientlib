@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>tapi_lib</name>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
   <description>Library to easily build nodes with Tapi</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
@@ -15,6 +15,7 @@
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <url type="repository">https://github.com/tobby88/ros-tapi-lib</url>
+  <url type="website">https://tobby88.github.io/ros-tapi-lib/html/index-msg.html</url>
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
   <!-- Authors do not have to be maintianers, but could be -->
@@ -31,5 +32,6 @@
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
+    <rosdoc config="rosdoc.yaml" />
   </export>
 </package>

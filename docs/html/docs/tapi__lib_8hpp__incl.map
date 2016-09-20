@@ -1,0 +1,10 @@
+<map id="tapi_lib.hpp" name="tapi_lib.hpp">
+<area shape="rect" id="node2" href="$connection_8hpp.html" title="Declaration of the Tapi::Connection&#45;class and definition of its member variables. ..." alt="" coords="393,162,504,189"/>
+<area shape="rect" id="node4" href="$device_8hpp.html" title="Declaration of the Tapi::Device&#45;class and definition of its member variables. " alt="" coords="223,80,309,107"/>
+<area shape="rect" id="node7" href="$feature_8hpp.html" title="Declaration of the Tapi::Feature&#45;class and definition of its member variables. " alt="" coords="5,162,92,189"/>
+<area shape="rect" id="node9" href="$publisher_8hpp.html" title="Declaration of the Tapi::Publisher&#45;class and definition of its member variables (also part of the def..." alt="" coords="1271,80,1370,107"/>
+<area shape="rect" id="node13" href="$tapi__client_8hpp.html" title="tapi_client.hpp" alt="" coords="1686,162,1793,189"/>
+<area shape="rect" id="node18" href="$serviceclient_8hpp.html" title="serviceclient.hpp" alt="" coords="2018,80,2138,107"/>
+<area shape="rect" id="node22" href="$serviceserver_8hpp.html" title="serviceserver.hpp" alt="" coords="917,80,1042,107"/>
+<area shape="rect" id="node25" href="$subscriber_8hpp.html" title="subscriber.hpp" alt="" coords="1641,80,1747,107"/>
+</map>

@@ -32,6 +32,15 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \defgroup tapi_lib tapi_lib
+ * \file tapi_lib.hpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 07 Sep 2016
+ * \brief Includes everything of tapi_lib
+ */
+
 // Server-Libraries
 #include "connection.hpp"
 #include "device.hpp"
@@ -57,4 +66,3 @@
 #include "tapi_lib/Hello.h"
 #include "tapi_lib/State.h"
 #include "tapi_lib/Transition.h"
-

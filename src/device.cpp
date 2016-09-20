@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file device.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 20 Nov 2015
+ * \brief Definition of the Tapi::Device-class and its member functions
+ */
+
 #include "include/tapi_lib/device.hpp"
 
 using namespace std;
@@ -96,9 +104,12 @@ string Device::GetName() const
 
 vector<Feature*> Device::GetSortedFeatures()
 {
+  // Iterate through all features and save a pointer to them in the vector
   vector<Feature*> featureList;
   for (auto it = features.begin(); it != features.end(); ++it)
     featureList.push_back(&it->second);
+
+  // Vector contains more than on entry -> sort it alphabetically
   if (featureList.size() > 1)
     sort(featureList.begin(), featureList.end(), compareFeatureNames);
   return featureList;
@@ -117,22 +128,29 @@ string Device::GetUUID()
 void Device::Update(uint8_t type, string name, unsigned long lastSeq, ros::Time lastSeen, unsigned long heartbeat,
                     map<string, Feature> featureUpdate)
 {
+  // First update basic data
   this->type = type;
   this->name = name;
   this->lastSeq = lastSeq;
   this->lastSeen = lastSeen;
   this->heartbeat = heartbeat;
+
+  // New feature map is empty - clear our own feature map
   if (featureUpdate.size() == 0)
   {
     features.clear();
     return;
   }
+
+  // Old feature map is empty, just use the new one as current feature map
   if (features.size() == 0)
   {
     features = featureUpdate;
     return;
   }
 
+  // Both feature maps contain one or more features but the same number of feature -> compare them by iterating through
+  // all and check if there exists a feature with the same uuid and if yes if they are identical
   bool equ = true;
   if (features.size() == featureUpdate.size())
   {
@@ -147,15 +165,25 @@ void Device::Update(uint8_t type, string name, unsigned long lastSeq, ros::Time 
   else
     equ = false;
 
+  // The number of features wasn't the same or at least one feature didn't exist or was different -> update the feature
+  // map
   if (!equ)
   {
+    // Iterate through all new features
     for (auto it = featureUpdate.begin(); it != featureUpdate.end(); ++it)
     {
+      // If the feature doesn't exist -> add it to the feature map
       if (features.count(it->second.GetUUID()) == 0)
         features.emplace(it->second.GetUUID(), it->second);
+      // Feature already exists -> just update its data
       else
         features.at(it->second.GetUUID()).Update(it->second.GetType(), it->second.GetName());
     }
+
+    // Now iterate through all existing features and check, if there is one or more missing in the new feature map. If
+    // yes -> delete it from our feature map.
+    // TODO: Check if the pointers are safe -> Maybe it's necessary to first store what has to be deleted and then
+    // iterate through the delete-vector to actually delete the features
     for (auto it = features.begin(); it != features.end(); ++it)
     {
       if (featureUpdate.count(it->second.GetUUID()) == 0)

@@ -1,0 +1,28 @@
+actions: []
+authors: tobby <tobby@tobby.eu>
+brief: ''
+bugtracker: ''
+depends:
+- message_generation
+- catkin
+- message_runtime
+- std_msgs
+- roscpp
+description: Library to easily build nodes with Tapi
+license: GPLv3
+maintainers: tobby <tobby@tobby.eu>
+msgs:
+- Connect
+- Connection
+- Device
+- Feature
+- State
+- Transition
+package_type: package
+repo_url: https://github.com/tobby88/ros-tapi-lib
+srvs:
+- GetConnectionList
+- GetDeviceList
+- Hello
+- GetStateMachine
+url: https://tobby88.github.io/ros-tapi-lib/html/index-msg.html

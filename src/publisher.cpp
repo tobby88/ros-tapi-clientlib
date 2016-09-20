@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file publisher.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 28 Aug 2016
+ * \brief Definition of the Tapi::Publisher-class and its member functions
+ */
+
 #include "include/tapi_lib/publisher.hpp"
 
 using namespace std;

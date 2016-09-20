@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file connection.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 28 Jul 2016
+ * \brief Definition of the Tapi::Connection-class and its member functions
+ */
+
 #include "include/tapi_lib/connection.hpp"
 
 using namespace std;

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classTapi_1_1TapiClient.html" title="Tapi::TapiClient" alt="" coords="5,81,120,108"/>
+<area shape="rect" id="node2" href="$classTapi_1_1Publisher.html" title="Create Tapi&#45;compliant publishers with the help of this class, inherits its base functions from Tapi::..." alt="" coords="182,5,291,32"/>
+<area shape="rect" id="node3" href="$classTapi_1_1ServiceClient.html" title="Tapi::ServiceClient" alt="" coords="170,56,303,83"/>
+<area shape="rect" id="node4" href="$classTapi_1_1ServiceServer.html" title="Tapi::ServiceServer" alt="" coords="168,107,305,133"/>
+<area shape="rect" id="node5" href="$classTapi_1_1Subscriber.html" title="Tapi::Subscriber" alt="" coords="178,157,295,184"/>
+</map>
