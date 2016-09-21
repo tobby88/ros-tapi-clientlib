@@ -101,7 +101,7 @@ public:
    * // Option 1 (longer, but maybe easier to read)
    * ros::SubscribeOptions opt;
    * double* coefficient;
-   * // Usage: SubscribeOptionsForTapi(topic_type, queue_lenght, &callback_function)
+   * // Usage: SubscribeOptionsForTapi(topic_type, queue_length, &callback_function)
    * opt = SubscribeOptionsForTapi(std_msgs::Float64, 1, &My_Classname::myFloatCallback);
    * coefficient = tsub->AddFeature(opt, "Double/Float64");
    * // Option 2 (shorter, but maybe harder to read)
@@ -112,6 +112,7 @@ public:
    * void My_Classname::myFloatCallback(const std_msgs::Float64::ConstPtr& msg)
    * {
    *   double value = msg->data * (*coefficient);
+   *   // Do something with "value" now
    * }
    *
    * // Don't delete \c ros::Subscriber objects, only delete the Tapi::Subscriber object,

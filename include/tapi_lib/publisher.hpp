@@ -95,6 +95,7 @@ public:
    * // Example code to use the Tapi::Publisher class
    * // nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())
    * Tapi::Publisher *tpub = new Tapi::Publisher(nh, "Test");
+   * // Usage: AddFeature<topic_type>(name, queuesize)
    * ros::Publisher* pub = tpub->AddFeature<std_msgs::Bool>("testbutton", 10);
    * std_msgs::Bool test;
    * test.data = true;

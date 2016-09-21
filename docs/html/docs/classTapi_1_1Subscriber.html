@@ -219,7 +219,7 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 <code>Feature.msg</code> </dd>
 <dd>
-<a class="el" href="classTapi_1_1Subscriber.html#a948fd03f34a896ffae134c0478776c5c" title="coefficients of our subscribers ">Tapi::Subscriber::coefficients</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Subscriber class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Subscriber.html">Tapi::Subscriber</a>* tsub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Subscriber.html">Tapi::Subscriber</a>(<a class="code" href="classTapi_1_1Subscriber.html#af343088189c17f1f3024d7287e0ebd3c">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line"><span class="comment">// Option 1 (longer, but maybe easier to read)</span></div><div class="line">ros::SubscribeOptions opt;</div><div class="line"><span class="keywordtype">double</span>* coefficient;</div><div class="line"><span class="comment">// Usage: SubscribeOptionsForTapi(topic_type, queue_lenght, &amp;callback_function)</span></div><div class="line">opt = <a class="code" href="subscriber_8hpp.html#a26f7da54917336b7da7fa72cc88177e7">SubscribeOptionsForTapi</a>(std_msgs::Float64, 1, &amp;My_Classname::myFloatCallback);</div><div class="line">coefficient = tsub-&gt;<a class="code" href="classTapi_1_1Subscriber.html#a3e71f0ecf33cafa0b009da228b37d48e">AddFeature</a>(opt, <span class="stringliteral">&quot;Double/Float64&quot;</span>);</div><div class="line"><span class="comment">// Option 2 (shorter, but maybe harder to read)</span></div><div class="line">coefficient = tsub-&gt;<a class="code" href="classTapi_1_1Subscriber.html#a3e71f0ecf33cafa0b009da228b37d48e">AddFeature</a>(<a class="code" href="subscriber_8hpp.html#a26f7da54917336b7da7fa72cc88177e7">SubscribeOptionsForTapi</a>(std_msgs::Float64, 1, &amp;My_Classname::myFloatCallback),</div><div class="line"><span class="stringliteral">&quot;Double/Float64&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// In the callback function now don&#39;t forget to multiply with the coeffeicient, e.g.:</span></div><div class="line"><span class="keywordtype">void</span> My_Classname::myFloatCallback(<span class="keyword">const</span> std_msgs::Float64::ConstPtr&amp; msg)</div><div class="line">{</div><div class="line">  <span class="keywordtype">double</span> value = msg-&gt;data * (*coefficient);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// Don&#39;t delete \c ros::Subscriber objects, only delete the Tapi::Subscriber object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the subscribers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tsub;</div></div><!-- fragment --> </dd></dl>
+<a class="el" href="classTapi_1_1Subscriber.html#a948fd03f34a896ffae134c0478776c5c" title="coefficients of our subscribers ">Tapi::Subscriber::coefficients</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Subscriber class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Subscriber.html">Tapi::Subscriber</a>* tsub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Subscriber.html">Tapi::Subscriber</a>(<a class="code" href="classTapi_1_1Subscriber.html#af343088189c17f1f3024d7287e0ebd3c">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line"><span class="comment">// Option 1 (longer, but maybe easier to read)</span></div><div class="line">ros::SubscribeOptions opt;</div><div class="line"><span class="keywordtype">double</span>* coefficient;</div><div class="line"><span class="comment">// Usage: SubscribeOptionsForTapi(topic_type, queue_length, &amp;callback_function)</span></div><div class="line">opt = <a class="code" href="subscriber_8hpp.html#a26f7da54917336b7da7fa72cc88177e7">SubscribeOptionsForTapi</a>(std_msgs::Float64, 1, &amp;My_Classname::myFloatCallback);</div><div class="line">coefficient = tsub-&gt;<a class="code" href="classTapi_1_1Subscriber.html#a3e71f0ecf33cafa0b009da228b37d48e">AddFeature</a>(opt, <span class="stringliteral">&quot;Double/Float64&quot;</span>);</div><div class="line"><span class="comment">// Option 2 (shorter, but maybe harder to read)</span></div><div class="line">coefficient = tsub-&gt;<a class="code" href="classTapi_1_1Subscriber.html#a3e71f0ecf33cafa0b009da228b37d48e">AddFeature</a>(<a class="code" href="subscriber_8hpp.html#a26f7da54917336b7da7fa72cc88177e7">SubscribeOptionsForTapi</a>(std_msgs::Float64, 1, &amp;My_Classname::myFloatCallback),</div><div class="line"><span class="stringliteral">&quot;Double/Float64&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// In the callback function now don&#39;t forget to multiply with the coeffeicient, e.g.:</span></div><div class="line"><span class="keywordtype">void</span> My_Classname::myFloatCallback(<span class="keyword">const</span> std_msgs::Float64::ConstPtr&amp; msg)</div><div class="line">{</div><div class="line">  <span class="keywordtype">double</span> value = msg-&gt;data * (*coefficient);</div><div class="line">  <span class="comment">// Do something with &quot;value&quot; now</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// Don&#39;t delete \c ros::Subscriber objects, only delete the Tapi::Subscriber object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the subscribers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tsub;</div></div><!-- fragment --> </dd></dl>
 
 <p>Definition at line <a class="el" href="subscriber_8cpp_source.html#l00072">72</a> of file <a class="el" href="subscriber_8cpp_source.html">subscriber.cpp</a>.</p>
 
@@ -282,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 <p>coefficients of our subscribers </p>
 <p>Stores with which values our received messages have to be multiplied. Only valid for basic number types (e.g std_msgs/Int8, std_msgs/Int16, std_msgs/Float32, ...) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Subscriber.html#adfd585b1d4251a5def58e56a81353baf" title="Get Config-messages from the core to get commands to which Publisher we shall connect. ">Tapi::Subscriber::readConfigMsg</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00148">148</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00149">149</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -307,7 +307,7 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="classTapi_1_1Subscriber.html" title="Create Tapi-compliant subscribers with the help of this class, inherits its base functions from Tapi:...">Subscriber</a> to subscribe the Config-messages topic to get information of who shall connect to who. Listens on /Tapi/Config. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Subscriber.html#adfd585b1d4251a5def58e56a81353baf" title="Get Config-messages from the core to get commands to which Publisher we shall connect. ">Tapi::Subscriber::readConfigMsg</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00155">155</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00156">156</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>NodeHandle-pointer necessary to create subscribers. </p>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00158">158</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00159">159</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Name of the node. </p>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00161">161</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00162">162</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +380,7 @@ Additional Inherited Members</h2></td></tr>
 <p>A <code>vector</code> of <code>pair</code> objects of <code>ros::SubscribeOptions</code> and <code>ros::Subscriber</code> to hold the information about all subscribers. </p>
 <p>The second part of the pair is zero if the <code><a class="el" href="classTapi_1_1Subscriber.html" title="Create Tapi-compliant subscribers with the help of this class, inherits its base functions from Tapi:...">Subscriber</a></code> isn't connected to a <code><a class="el" href="classTapi_1_1Publisher.html" title="Create Tapi-compliant publishers with the help of this class, inherits its base functions from Tapi::...">Publisher</a></code>. If the core tells us to connect, the <code><a class="el" href="classTapi_1_1Subscriber.html" title="Create Tapi-compliant subscribers with the help of this class, inherits its base functions from Tapi:...">Subscriber</a></code> is created with the help of the <code>SubscribeOptions</code> object in the first part of the <code>pair</code>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Subscriber.html#a3e71f0ecf33cafa0b009da228b37d48e" title="Create a subscriber by adding a feature. ">Tapi::Subscriber::AddFeature</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00172">172</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00173">173</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -405,7 +405,7 @@ Additional Inherited Members</h2></td></tr>
 <p><code>vector</code> of current connected topics. This helps to check if we need to change or just stay, if it didn't change. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Subscriber.html#adfd585b1d4251a5def58e56a81353baf" title="Get Config-messages from the core to get commands to which Publisher we shall connect. ">Tapi::Subscriber::readConfigMsg</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00179">179</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
+<p>Definition at line <a class="el" href="subscriber_8hpp_source.html#l00180">180</a> of file <a class="el" href="subscriber_8hpp_source.html">subscriber.hpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +419,7 @@ Additional Inherited Members</h2></td></tr>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
+<small>autogenerated on Wed Sep 21 2016 04:37:22</small>
 </div>
 </body>
 </html>

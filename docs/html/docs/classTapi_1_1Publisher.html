@@ -212,9 +212,9 @@ template&lt;typename T &gt; </div>
 <dd>
 <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a> </dd>
 <dd>
-<a class="el" href="classTapi_1_1Publisher.html#a8a809fd7aa8912a049c071184773a52d" title="vector of pointers to all ros::publisher objects created with the help of this class ...">Tapi::Publisher::publishers</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Publisher class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a> *tpub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a>(<a class="code" href="classTapi_1_1Publisher.html#ade262666d51e08db4b8794252ffe27a4">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line">ros::Publisher* pub = tpub-&gt;<a class="code" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e">AddFeature</a>&lt;std_msgs::Bool&gt;(<span class="stringliteral">&quot;testbutton&quot;</span>, 10);</div><div class="line">std_msgs::Bool test;</div><div class="line">test.data = <span class="keyword">true</span>;</div><div class="line">pub-&gt;publish(test);</div><div class="line"><span class="comment">// Don&#39;t delete all ros::Publisher objects, only delete the Tapi::Publisher object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the publishers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tpub;</div></div><!-- fragment --> </dd></dl>
+<a class="el" href="classTapi_1_1Publisher.html#a8a809fd7aa8912a049c071184773a52d" title="vector of pointers to all ros::publisher objects created with the help of this class ...">Tapi::Publisher::publishers</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Publisher class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a> *tpub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a>(<a class="code" href="classTapi_1_1Publisher.html#ade262666d51e08db4b8794252ffe27a4">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line"><span class="comment">// Usage: AddFeature&lt;topic_type&gt;(name, queuesize)</span></div><div class="line">ros::Publisher* pub = tpub-&gt;<a class="code" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e">AddFeature</a>&lt;std_msgs::Bool&gt;(<span class="stringliteral">&quot;testbutton&quot;</span>, 10);</div><div class="line">std_msgs::Bool test;</div><div class="line">test.data = <span class="keyword">true</span>;</div><div class="line">pub-&gt;publish(test);</div><div class="line"><span class="comment">// Don&#39;t delete all ros::Publisher objects, only delete the Tapi::Publisher object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the publishers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tpub;</div></div><!-- fragment --> </dd></dl>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00107">107</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00108">108</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -239,7 +239,7 @@ template&lt;typename T &gt; </div>
 
 <p>NodeHandle-pointer necessary to create publishers. </p>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00142">142</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00143">143</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +263,7 @@ template&lt;typename T &gt; </div>
 
 <p>Name of the node. </p>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00145">145</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00146">146</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ template&lt;typename T &gt; </div>
 <p><code>vector</code> of pointers to all <code>ros::publisher</code> objects created with the help of this class </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e" title="Create a publisher by adding a feature. ">Tapi::Publisher::AddFeature</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00151">151</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00152">152</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ template&lt;typename T &gt; </div>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
+<small>autogenerated on Wed Sep 21 2016 04:37:22</small>
 </div>
 </body>
 </html>

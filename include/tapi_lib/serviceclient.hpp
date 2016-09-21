@@ -103,6 +103,7 @@ public:
    * // Example code to use the Tapi::ServiceClient class
    * // nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())
    * Tapi::ServiceClient* tclient = new Tapi::ServiceClient(nh, "Test");
+   * // Usage: AddFeature<service_type>(descriptive_name)
    * ros::ServiceClient** client = tclient->AddFeature<tapi_lib::GetDeviceList>("Devicelist Getter");
    * while(ros::ok()
    * {
@@ -118,7 +119,6 @@ public:
    *     }
    *   }
    * }
-   *
    * // Don't delete ros::ServiceClient objects, only delete the Tapi::ServiceClient object, it will shutdown and delete
    * // the serviceclients in its destructor
    * delete tclient;
