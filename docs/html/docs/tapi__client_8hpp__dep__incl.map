@@ -1,12 +1,12 @@
 <map id="tapi_client.hpp" name="tapi_client.hpp">
 <area shape="rect" id="node2" href="$publisher_8hpp.html" title="Declaration of the Tapi::Publisher&#45;class and definition of its member variables (also part of the def..." alt="" coords="511,80,609,107"/>
 <area shape="rect" id="node3" href="$tapi__lib_8hpp.html" title="Includes everything of tapi_lib. " alt="" coords="299,155,387,181"/>
-<area shape="rect" id="node5" href="$serviceclient_8hpp.html" title="serviceclient.hpp" alt="" coords="36,80,156,107"/>
-<area shape="rect" id="node7" href="$serviceserver_8hpp.html" title="serviceserver.hpp" alt="" coords="180,80,305,107"/>
-<area shape="rect" id="node9" href="$subscriber_8hpp.html" title="subscriber.hpp" alt="" coords="380,80,487,107"/>
-<area shape="rect" id="node11" href="$tapi__client_8cpp.html" title="tapi_client.cpp" alt="" coords="633,80,740,107"/>
+<area shape="rect" id="node5" href="$serviceclient_8hpp.html" title="Declaration of the Tapi::ServiceClient&#45;class and definition of its member variables (also part of the..." alt="" coords="36,80,156,107"/>
+<area shape="rect" id="node7" href="$serviceserver_8hpp.html" title="Declaration of the Tapi::ServiceClient&#45;class and definition of its member variables. " alt="" coords="180,80,305,107"/>
+<area shape="rect" id="node9" href="$subscriber_8hpp.html" title="Declaration of the Tapi::Subscriber&#45;class and definition of its member variables. ..." alt="" coords="380,80,487,107"/>
+<area shape="rect" id="node11" href="$tapi__client_8cpp.html" title="Definition of the Tapi::TapiClient&#45;class and its member functions. " alt="" coords="633,80,740,107"/>
 <area shape="rect" id="node4" href="$publisher_8cpp.html" title="Definition of the Tapi::Publisher&#45;class and its member functions. " alt="" coords="541,155,640,181"/>
-<area shape="rect" id="node6" href="$serviceclient_8cpp.html" title="serviceclient.cpp" alt="" coords="5,155,125,181"/>
-<area shape="rect" id="node8" href="$serviceserver_8cpp.html" title="serviceserver.cpp" alt="" coords="149,155,275,181"/>
-<area shape="rect" id="node10" href="$subscriber_8cpp.html" title="subscriber.cpp" alt="" coords="411,155,517,181"/>
+<area shape="rect" id="node6" href="$serviceclient_8cpp.html" title="Definition of the Tapi::ServiceClient&#45;class and its member functions. " alt="" coords="5,155,125,181"/>
+<area shape="rect" id="node8" href="$serviceserver_8cpp.html" title="Definition of the Tapi::ServiceServer&#45;class and its member functions. " alt="" coords="149,155,275,181"/>
+<area shape="rect" id="node10" href="$subscriber_8cpp.html" title="Definition of the Tapi::Subscriber&#45;class and its member functions. " alt="" coords="411,155,517,181"/>
 </map>

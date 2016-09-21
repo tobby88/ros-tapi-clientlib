@@ -36,7 +36,7 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Create Tapi-compliant publishers with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a>.  
+<p>Create Tapi-compliant publishers with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  
  <a href="classTapi_1_1Publisher.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>&gt;</code></p>
@@ -45,7 +45,7 @@ Inheritance diagram for Tapi::Publisher:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTapi_1_1Publisher__inherit__graph.png" border="0" usemap="#Tapi_1_1Publisher_inherit__map" alt="Inheritance graph"/></div>
 <map name="Tapi_1_1Publisher_inherit__map" id="Tapi_1_1Publisher_inherit__map">
-<area shape="rect" id="node2" href="classTapi_1_1TapiClient.html" title="Tapi::TapiClient" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="classTapi_1_1TapiClient.html" title="Create Tapi&#45;compliant devices with the help of this class Tapi::TapiClient. " alt="" coords="5,5,120,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -63,39 +63,46 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8ea0121a2b1bf0700f9abb92af16fac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#afeaf13f48e64453d85b5a69d613e0f70">TapiClient</a> (ros::NodeHandle *<a class="el" href="classTapi_1_1TapiClient.html#a3bfab441471a036f278575aa0eb42245">nh</a>, std::string <a class="el" href="classTapi_1_1TapiClient.html#a6d4832090696248f84a1baae4c6549c1">nodename</a>, uint8_t <a class="el" href="classTapi_1_1TapiClient.html#aa1154e242a3f55ff3fbdc9ea4d305a50">deviceType</a>)</td></tr>
+<tr class="memdesc:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">TapiClient</a> object as the helper to connect to the core of <a class="el" href="namespaceTapi.html">Tapi</a> and create Tapi-compliant publishers/subscribers/serviceservers/serviceclients. Usually called by classes who inherits from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  <a href="#afeaf13f48e64453d85b5a69d613e0f70">More...</a><br /></td></tr>
 <tr class="separator:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#aae0b197261385e46c95d4b4b8f1600bc">~TapiClient</a> ()</td></tr>
+<tr class="memdesc:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown the Hello-client and its heartbeat-thread and free the memory.  <a href="#aae0b197261385e46c95d4b4b8f1600bc">More...</a><br /></td></tr>
 <tr class="separator:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ade262666d51e08db4b8794252ffe27a4"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1Publisher.html#ade262666d51e08db4b8794252ffe27a4">nh</a></td></tr>
-<tr class="memdesc:ade262666d51e08db4b8794252ffe27a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">NodeHandle-pointer necessary to create subscribers, publishers and services.  <a href="#ade262666d51e08db4b8794252ffe27a4">More...</a><br /></td></tr>
+<tr class="memdesc:ade262666d51e08db4b8794252ffe27a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">NodeHandle-pointer necessary to create publishers.  <a href="#ade262666d51e08db4b8794252ffe27a4">More...</a><br /></td></tr>
 <tr class="separator:ade262666d51e08db4b8794252ffe27a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a447e13186f79f3ae255b53617303a975"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1Publisher.html#a447e13186f79f3ae255b53617303a975">nodename</a></td></tr>
 <tr class="memdesc:a447e13186f79f3ae255b53617303a975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the node.  <a href="#a447e13186f79f3ae255b53617303a975">More...</a><br /></td></tr>
 <tr class="separator:a447e13186f79f3ae255b53617303a975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a809fd7aa8912a049c071184773a52d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ros::Publisher * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1Publisher.html#a8a809fd7aa8912a049c071184773a52d">publishers</a></td></tr>
-<tr class="memdesc:a8a809fd7aa8912a049c071184773a52d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of pointers to all ros::publisher objects created with the help of this class  <a href="#a8a809fd7aa8912a049c071184773a52d">More...</a><br /></td></tr>
+<tr class="memdesc:a8a809fd7aa8912a049c071184773a52d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of pointers to all <code>ros::publisher</code> objects created with the help of this class  <a href="#a8a809fd7aa8912a049c071184773a52d">More...</a><br /></td></tr>
 <tr class="separator:a8a809fd7aa8912a049c071184773a52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf">connect</a> ()</td></tr>
+<tr class="memdesc:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the Hello-Service on /Tapi/HelloServ and send our device data.  <a href="#add714cf851f39883647a54ff220b1ecf">More...</a><br /></td></tr>
 <tr class="separator:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0f5790310ea8af86ff8b102576a656e3">generateUUID</a> ()</td></tr>
+<tr class="memdesc:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new unique id by using the uuid library and then convert it to a ros compatible string (underscores instead of dashes)  <a href="#a0f5790310ea8af86ff8b102576a656e3">More...</a><br /></td></tr>
 <tr class="separator:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a9cf4f0c6a636f042622cbb2b77c6a0d3">getNextFeatureUUID</a> ()</td></tr>
+<tr class="memdesc:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next id of/for a feature.  <a href="#a9cf4f0c6a636f042622cbb2b77c6a0d3">More...</a><br /></td></tr>
 <tr class="separator:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::vector&lt; tapi_lib::Feature &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#ac413cdd9160713defdae6fc5dd173e35">featureMsgs</a></td></tr>
+<tr class="memdesc:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of Feature-messages to call the Hello-service  <a href="#ac413cdd9160713defdae6fc5dd173e35">More...</a><br /></td></tr>
 <tr class="separator:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0a537172133f12dcba811e6a1a17fe62">uuid</a></td></tr>
+<tr class="memdesc:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID of this device.  <a href="#a0a537172133f12dcba811e6a1a17fe62">More...</a><br /></td></tr>
 <tr class="separator:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Create Tapi-compliant publishers with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a>. </p>
+<div class="textblock"><p>Create Tapi-compliant publishers with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>. </p>
 <dl class="section author"><dt>Author</dt><dd>Tobias Holst </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>2.1.1 </dd></dl>
 
@@ -193,7 +200,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Create a publisher by adding a feature. </p>
-<p>Template. Gets a saved uuid or generates an new one with the help of <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a>, create a ros::Publisher with the templated type and the device uuid and feature uuid as topic name. Then it stores a pointer to this publisher and the infos about this topic in a <a class="el" href="classTapi_1_1Feature.html" title="Store information about a feature of a device. ">Feature</a> message. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Template. Gets a saved uuid or generates an new one with the help of <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>, create a ros::Publisher with the templated type and the device uuid and feature uuid as topic name. Then it stores a pointer to this publisher and the infos about this topic in a <a class="el" href="classTapi_1_1Feature.html" title="Store information about a feature of a device. ">Feature</a> message. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">featurename</td><td>(Descriptive) name of the feature </td></tr>
     <tr><td class="paramname">queuesize</td><td>Size of the message queue for this publisher. If there are more messages waiting than this value the messages will be discarded </td></tr>
@@ -203,9 +210,11 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the publisher </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><code>Feature.msg</code> </dd>
 <dd>
-<a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Publisher class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a> *tpub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a>(<a class="code" href="classTapi_1_1Publisher.html#ade262666d51e08db4b8794252ffe27a4">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line">ros::Publisher* pub = tpub-&gt;<a class="code" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e">AddFeature</a>&lt;std_msgs::Bool&gt;(<span class="stringliteral">&quot;testbutton&quot;</span>, 10);</div><div class="line">std_msgs::Bool test;</div><div class="line">test.data = <span class="keyword">true</span>;</div><div class="line">pub-&gt;publish(test);</div><div class="line"><span class="comment">// Don&#39;t delete all ros::Publisher objects, only delete the Tapi::Publisher object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the publishers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tpub;</div></div><!-- fragment --> </dd></dl>
+<a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a> </dd>
+<dd>
+<a class="el" href="classTapi_1_1Publisher.html#a8a809fd7aa8912a049c071184773a52d" title="vector of pointers to all ros::publisher objects created with the help of this class ...">Tapi::Publisher::publishers</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::Publisher class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a> *tpub = <span class="keyword">new</span> <a class="code" href="classTapi_1_1Publisher.html">Tapi::Publisher</a>(<a class="code" href="classTapi_1_1Publisher.html#ade262666d51e08db4b8794252ffe27a4">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line">ros::Publisher* pub = tpub-&gt;<a class="code" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e">AddFeature</a>&lt;std_msgs::Bool&gt;(<span class="stringliteral">&quot;testbutton&quot;</span>, 10);</div><div class="line">std_msgs::Bool test;</div><div class="line">test.data = <span class="keyword">true</span>;</div><div class="line">pub-&gt;publish(test);</div><div class="line"><span class="comment">// Don&#39;t delete all ros::Publisher objects, only delete the Tapi::Publisher object,</span></div><div class="line"><span class="comment">// it will shutdown and delete the publishers in its destructor</span></div><div class="line"><span class="keyword">delete</span> tpub;</div></div><!-- fragment --> </dd></dl>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00106">106</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00107">107</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -228,9 +237,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>NodeHandle-pointer necessary to create subscribers, publishers and services. </p>
+<p>NodeHandle-pointer necessary to create publishers. </p>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00141">141</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00142">142</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +263,7 @@ template&lt;typename T &gt; </div>
 
 <p>Name of the node. </p>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00144">144</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00145">145</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -276,10 +285,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>vector</code> of pointers to all ros::publisher objects created with the help of this class </p>
+<p><code>vector</code> of pointers to all <code>ros::publisher</code> objects created with the help of this class </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1Publisher.html#afb344a0967dd1937c5022175a19fd02e" title="Create a publisher by adding a feature. ">Tapi::Publisher::AddFeature</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00150">150</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="publisher_8hpp_source.html#l00151">151</a> of file <a class="el" href="publisher_8hpp_source.html">publisher.hpp</a>.</p>
 
 </div>
 </div>
@@ -293,7 +302,7 @@ template&lt;typename T &gt; </div>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Tue Sep 20 2016 03:59:59</small>
+<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
 </div>
 </body>
 </html>

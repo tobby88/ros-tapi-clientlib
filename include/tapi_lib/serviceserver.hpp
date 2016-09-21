@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file serviceserver.hpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 06 Sep 2016
+ * \brief Declaration of the Tapi::ServiceClient-class and definition of its member variables
+ */
+
 #ifndef SERVICESERVER_H
 #define SERVICESERVER_H
 
@@ -47,20 +55,76 @@
 
 namespace Tapi
 {
+/*!
+ * \brief Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from
+ * Tapi::TapiClient
+ * \author Tobias Holst
+ * \version 2.1.1
+ */
 class ServiceServer : public TapiClient
 {
 public:
   // Constructor/Destructor
+
+  /*!
+   * \brief Create a ServiceServer object as the helper to connect to the core of Tapi and create Tapi-compliant
+   * serviceservers
+   * \param nh Pointer to a \c ros::NodeHandle created outside of this class
+   * \param nodename Name of the device
+   */
   ServiceServer(ros::NodeHandle *nh, std::string nodename = "");
+
+  //! Shutdown all serviceservers and free the memory
   ~ServiceServer();
 
   // Public member functions
+
+  /*!
+   * \brief Create a \c ros::ServiceServer by adding a feature
+   *
+   * Gets a saved uuid or generates a new one with the help of Tapi::TapiClient. Stores the \c pair of \c
+   * ros::AdvertiseServiceOptions and a pointer to the created ros::ServiceServer in the \c services \c vector. The
+   * AdvertiseServiceOptions should be created with the help of the \c ServiceServerOptionsForTapi \c macro. At last the
+   * informations are stored in the Feature-messages \c vector of Tapi::TapiClient.
+   * \param opt Options to create the service, easiest way is to use \c ServiceServerOptionsForTapi \c macro
+   * \param featurename (Descriptive) name of the feature
+   * \return Pointer to the created \c ros::ServiceServer object.
+   * \see Tapi::ServiceServer::services
+   * \see Tapi::TapiClient
+   * \see Tapi::Feature.msg
+   * \code{.cpp}
+   * // Example code to use the Tapi::ServiceServer class
+   * // nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())
+   * Tapi::ServiceServer* tservice = new Tapi::ServiceServer(nh, "Test");
+   * // Option 1 (longer, but maybe easier to read)
+   * ros::AdvertiseServiceOptions opt;
+   * // Usage: ServiceServerOptionsForTapi(servicetype, &callback_function)
+   * opt2 = ServiceServerOptionsForTapi(tapi_lib::GetDeviceList, &My_Classname::myCallbackFunction);
+   * ros::ServiceServer* server1 = tservice->AddFeature(opt, "Device List");
+   * // Option 2 (shorter, but maybe harder to read)
+   * ros::ServiceServer* server2 = tservice->AddFeature(ServiceServerOptionsForTapi(tapi_lib::GetDeviceList,
+   *                                                    &My_Classname::myCallbackFunction), "Device List");
+   * // Don't delete ros::ServiceServer objects, only delete the Tapi::ServiceServer object,
+   * // it will shutdown and delete the serviceservers in its destructor
+   * delete tservice;
+   * \endcode
+   */
   ros::ServiceServer *AddFeature(ros::AdvertiseServiceOptions opt, std::string featurename = "");
 
 private:
   // Private member variables
+
+  //! NodeHandle-pointer necessary to create subscribers and serviceclients.
   ros::NodeHandle *nh;
+
+  //! Name of the node
   std::string nodename;
+
+  /*!
+   * \brief \c vector of \c pairs with all \c ros::AdvertiseServiceOptions and the pointer to the \c ros::ServiceServer
+   * objects created with the help of this class
+   * \see Tapi::Publisher::AddFeature
+   */
   std::vector<std::pair<ros::AdvertiseServiceOptions, ros::ServiceServer *>> services;
 };
 }

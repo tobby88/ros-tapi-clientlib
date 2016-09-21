@@ -23,6 +23,6 @@ repo_url: https://github.com/tobby88/ros-tapi-lib
 srvs:
 - GetConnectionList
 - GetDeviceList
-- Hello
 - GetStateMachine
+- Hello
 url: https://tobby88.github.io/ros-tapi-lib/html/index-msg.html

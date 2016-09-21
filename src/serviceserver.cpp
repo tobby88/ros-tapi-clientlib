@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file serviceserver.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 06 Sep 2016
+ * \brief Definition of the Tapi::ServiceServer-class and its member functions
+ */
+
 #include "include/tapi_lib/serviceserver.hpp"
 
 using namespace std;
@@ -59,13 +67,16 @@ ServiceServer::~ServiceServer()
 
 ros::ServiceServer* ServiceServer::AddFeature(ros::AdvertiseServiceOptions opt, string featurename)
 {
+  // Get the unique id for our feature
   std::string featureUUID = getNextFeatureUUID();
+
+  // Create the ServiceServer with the topic-/service-name generated from the uuid
   ros::ServiceServer* service = 0;
   std::string serviceName = "/Tapi/" + uuid + "/" + featureUUID;
   opt.service = serviceName;
-
   service = new ros::ServiceServer(nh->advertiseService(opt));
 
+  // Service was created successfully, save the data in the services-vector and create the associated Feature message
   if (service)
   {
     pair<ros::AdvertiseServiceOptions, ros::ServiceServer*> newEntry;

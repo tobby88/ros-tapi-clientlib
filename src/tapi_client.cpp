@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file tapi_client.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 26 Aug 2016
+ * \brief Definition of the Tapi::TapiClient-class and its member functions
+ */
+
 #include "include/tapi_lib/tapi_client.hpp"
 #include <uuid/uuid.h>
 #include <algorithm>
@@ -53,12 +61,16 @@ TapiClient::TapiClient(NodeHandle* nh, string nodename, uint8_t deviceType)
   : nh(nh), nodename(nodename), deviceType(deviceType)
 {
   firstRun = true;
+  // Set the pathes of the config files and load the uuids from this files
   string homedir = getenv("HOME");
   filenameDevUUID = homedir + "/.ros/tapi_" + nodename + to_string((int)deviceType) + "_dev_uuid.txt";
   filenameFeatureUUIDs = homedir + "/.ros/tapi_" + nodename + to_string((int)deviceType) + "_feature_uuids.txt";
   loadUUIDs();
+
   helloClient = nh->serviceClient<tapi_lib::Hello>("/Tapi/HelloServ");
   heartbeatThread = new thread(&TapiClient::heartbeat, this);
+
+  // ServiceServer-devices are Publihers, too and ServiceClients are also Subscribers
   if (this->deviceType > 2)
     this->deviceType -= 2;
 }
@@ -75,6 +87,8 @@ TapiClient::~TapiClient()
 bool TapiClient::connect()
 {
   bool status = false;
+
+  // Generate the Hello-message/call
   tapi_lib::Hello hello;
   header.stamp = Time::now();
   header.seq++;
@@ -90,10 +104,16 @@ bool TapiClient::connect()
     ROS_ERROR("Unknown type of device");
     return false;
   }
+
+  // Append the vector of Feature-messages to the Hello call
   hello.request.Features = featureMsgs;
+
+  // Call Hello service
   if (helloClient.call(hello))
   {
     status = hello.response.Status;
+
+    // Standard output only on the firt successful Hello call
     if (firstRun)
     {
       if (status)
@@ -102,8 +122,11 @@ bool TapiClient::connect()
         ROS_INFO("Connection error, Heartbeat %u", hello.response.Heartbeat);
       firstRun = false;
     }
+
+    // We got the heartbeat interval we shall use in response to the Hello call
     heartbeatInterval = hello.response.Heartbeat;
   }
+  // If it's not the first connection but something went wrong
   else
   {
     ROS_ERROR("Failed to establish connection to hello service");
@@ -115,13 +138,21 @@ bool TapiClient::connect()
 
 string TapiClient::generateUUID()
 {
+  // Genrate a random uuid with the help of the uuid library
   uuid_t uuidt;
   char uuid_array[37];
   string uuid_string;
   uuid_generate_random(uuidt);
+
+  // Convert the uuid to a char-array
   uuid_unparse(uuidt, uuid_array);
+
+  // Now convert the char array to a string
   uuid_string = uuid_array;
+
+  // Replace dashes by underscores since ros doesn't allow to use dashes in topic names
   replace(uuid_string.begin(), uuid_string.end(), '-', '_');
+
   return uuid_string;
 }
 
@@ -129,6 +160,7 @@ void TapiClient::heartbeat()
 {
   while (ros::ok())
   {
+    // Reconnect every "heartbeatInterval" ms or WAIT_MS_ON_ERROR ms if there was an error
     bool success = false;
     success = connect();
     if (!success)
@@ -143,9 +175,12 @@ void TapiClient::heartbeat()
 
 string TapiClient::getNextFeatureUUID()
 {
+  // Try to respond with the next uuid if there are still enough in our vector
   string uuid;
   if (featureMsgs.size() < featureUUIDs.size())
     uuid = featureUUIDs[featureMsgs.size()];
+
+  // There are not enough feature uuids left, so generate one and also append it to the config file of feature uuids
   else
   {
     uuid = generateUUID();

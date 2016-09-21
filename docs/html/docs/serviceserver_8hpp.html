@@ -31,9 +31,12 @@
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">serviceserver.hpp File Reference</div>  </div>
+<div class="title">serviceserver.hpp File Reference<div class="ingroups"><a class="el" href="group__tapi__lib.html">tapi_lib</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Declaration of the <a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">Tapi::ServiceClient</a>-class and definition of its member variables.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;ros/advertise_service_options.h&quot;</code><br />
@@ -45,7 +48,7 @@ Include dependency graph for serviceserver.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="serviceserver_8hpp__incl.png" border="0" usemap="#serviceserver_8hpp" alt=""/></div>
 <map name="serviceserver_8hpp" id="serviceserver_8hpp">
-<area shape="rect" id="node7" href="tapi__client_8hpp.html" title="tapi_client.hpp" alt="" coords="251,87,358,114"/>
+<area shape="rect" id="node7" href="tapi__client_8hpp.html" title="Declaration of the Tapi::TapiClient&#45;class and definition of its member variables. ..." alt="" coords="251,87,358,114"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -54,7 +57,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="serviceserver_8hpp__dep__incl.png" border="0" usemap="#serviceserver_8hppdep" alt=""/></div>
 <map name="serviceserver_8hppdep" id="serviceserver_8hppdep">
 <area shape="rect" id="node2" href="tapi__lib_8hpp.html" title="Includes everything of tapi_lib. " alt="" coords="5,80,93,107"/>
-<area shape="rect" id="node3" href="serviceserver_8cpp.html" title="serviceserver.cpp" alt="" coords="117,80,243,107"/>
+<area shape="rect" id="node3" href="serviceserver_8cpp.html" title="Definition of the Tapi::ServiceServer&#45;class and its member functions. " alt="" coords="117,80,243,107"/>
 </map>
 </div>
 </div>
@@ -63,6 +66,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceServer.html">Tapi::ServiceServer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  <a href="classTapi_1_1ServiceServer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -75,7 +79,13 @@ Macros</h2></td></tr>
 <tr class="memitem:ae669ab053f01990c5c0b6b1cd62456d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serviceserver_8hpp.html#ae669ab053f01990c5c0b6b1cd62456d9">ServiceServerOptionsForTapi</a>(type,  callfctn)&#160;&#160;&#160;ros::AdvertiseServiceOptions::create&lt;type&gt;(&quot;&quot;, boost::bind((callfctn), this, _1, _2), ros::VoidPtr(this), NULL)</td></tr>
 <tr class="separator:ae669ab053f01990c5c0b6b1cd62456d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Declaration of the <a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">Tapi::ServiceClient</a>-class and definition of its member variables. </p>
+<dl class="section author"><dt>Author</dt><dd>Tobias Holst </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>06 Sep 2016 </dd></dl>
+
+<p>Definition in file <a class="el" href="serviceserver_8hpp_source.html">serviceserver.hpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ae669ab053f01990c5c0b6b1cd62456d9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -100,7 +110,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceserver_8hpp_source.html#l00045">45</a> of file <a class="el" href="serviceserver_8hpp_source.html">serviceserver.hpp</a>.</p>
+<p>Definition at line <a class="el" href="serviceserver_8hpp_source.html#l00053">53</a> of file <a class="el" href="serviceserver_8hpp_source.html">serviceserver.hpp</a>.</p>
 
 </div>
 </div>
@@ -110,7 +120,7 @@ Macros</h2></td></tr>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Tue Sep 20 2016 03:59:59</small>
+<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
 </div>
 </body>
 </html>

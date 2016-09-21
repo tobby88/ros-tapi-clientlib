@@ -1,6 +1,6 @@
 <map id="Tapi::TapiClient" name="Tapi::TapiClient">
 <area shape="rect" id="node2" href="$classTapi_1_1Publisher.html" title="Create Tapi&#45;compliant publishers with the help of this class, inherits its base functions from Tapi::..." alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$classTapi_1_1ServiceClient.html" title="Tapi::ServiceClient" alt="" coords="139,80,272,107"/>
-<area shape="rect" id="node4" href="$classTapi_1_1ServiceServer.html" title="Tapi::ServiceServer" alt="" coords="297,80,434,107"/>
-<area shape="rect" id="node5" href="$classTapi_1_1Subscriber.html" title="Tapi::Subscriber" alt="" coords="459,80,576,107"/>
+<area shape="rect" id="node3" href="$classTapi_1_1ServiceClient.html" title="Create Tapi&#45;compliant serviceclients with the help of this class, inherits its base functions from Ta..." alt="" coords="139,80,272,107"/>
+<area shape="rect" id="node4" href="$classTapi_1_1ServiceServer.html" title="Create Tapi&#45;compliant serviceservers with the help of this class, inherits its base functions from Ta..." alt="" coords="297,80,434,107"/>
+<area shape="rect" id="node5" href="$classTapi_1_1Subscriber.html" title="Create Tapi&#45;compliant subscribers with the help of this class, inherits its base functions from Tapi:..." alt="" coords="459,80,576,107"/>
 </map>

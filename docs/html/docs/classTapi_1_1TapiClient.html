@@ -39,6 +39,9 @@
 </div><!--header-->
 <div class="contents">
 
+<p>Create Tapi-compliant devices with the help of this class <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  
+ <a href="classTapi_1_1TapiClient.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Tapi::TapiClient:</div>
@@ -46,70 +49,93 @@ Inheritance diagram for Tapi::TapiClient:</div>
 <div class="center"><img src="classTapi_1_1TapiClient__inherit__graph.png" border="0" usemap="#Tapi_1_1TapiClient_inherit__map" alt="Inheritance graph"/></div>
 <map name="Tapi_1_1TapiClient_inherit__map" id="Tapi_1_1TapiClient_inherit__map">
 <area shape="rect" id="node2" href="classTapi_1_1Publisher.html" title="Create Tapi&#45;compliant publishers with the help of this class, inherits its base functions from Tapi::..." alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="classTapi_1_1ServiceClient.html" title="Tapi::ServiceClient" alt="" coords="139,80,272,107"/>
-<area shape="rect" id="node4" href="classTapi_1_1ServiceServer.html" title="Tapi::ServiceServer" alt="" coords="297,80,434,107"/>
-<area shape="rect" id="node5" href="classTapi_1_1Subscriber.html" title="Tapi::Subscriber" alt="" coords="459,80,576,107"/>
+<area shape="rect" id="node3" href="classTapi_1_1ServiceClient.html" title="Create Tapi&#45;compliant serviceclients with the help of this class, inherits its base functions from Ta..." alt="" coords="139,80,272,107"/>
+<area shape="rect" id="node4" href="classTapi_1_1ServiceServer.html" title="Create Tapi&#45;compliant serviceservers with the help of this class, inherits its base functions from Ta..." alt="" coords="297,80,434,107"/>
+<area shape="rect" id="node5" href="classTapi_1_1Subscriber.html" title="Create Tapi&#45;compliant subscribers with the help of this class, inherits its base functions from Tapi:..." alt="" coords="459,80,576,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afeaf13f48e64453d85b5a69d613e0f70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#afeaf13f48e64453d85b5a69d613e0f70">TapiClient</a> (ros::NodeHandle *<a class="el" href="classTapi_1_1TapiClient.html#a3bfab441471a036f278575aa0eb42245">nh</a>, std::string <a class="el" href="classTapi_1_1TapiClient.html#a6d4832090696248f84a1baae4c6549c1">nodename</a>, uint8_t <a class="el" href="classTapi_1_1TapiClient.html#aa1154e242a3f55ff3fbdc9ea4d305a50">deviceType</a>)</td></tr>
+<tr class="memdesc:afeaf13f48e64453d85b5a69d613e0f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">TapiClient</a> object as the helper to connect to the core of <a class="el" href="namespaceTapi.html">Tapi</a> and create Tapi-compliant publishers/subscribers/serviceservers/serviceclients. Usually called by classes who inherits from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  <a href="#afeaf13f48e64453d85b5a69d613e0f70">More...</a><br /></td></tr>
 <tr class="separator:afeaf13f48e64453d85b5a69d613e0f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b197261385e46c95d4b4b8f1600bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#aae0b197261385e46c95d4b4b8f1600bc">~TapiClient</a> ()</td></tr>
+<tr class="memdesc:aae0b197261385e46c95d4b4b8f1600bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown the Hello-client and its heartbeat-thread and free the memory.  <a href="#aae0b197261385e46c95d4b4b8f1600bc">More...</a><br /></td></tr>
 <tr class="separator:aae0b197261385e46c95d4b4b8f1600bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:add714cf851f39883647a54ff220b1ecf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf">connect</a> ()</td></tr>
+<tr class="memdesc:add714cf851f39883647a54ff220b1ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the Hello-Service on /Tapi/HelloServ and send our device data.  <a href="#add714cf851f39883647a54ff220b1ecf">More...</a><br /></td></tr>
 <tr class="separator:add714cf851f39883647a54ff220b1ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5790310ea8af86ff8b102576a656e3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0f5790310ea8af86ff8b102576a656e3">generateUUID</a> ()</td></tr>
+<tr class="memdesc:a0f5790310ea8af86ff8b102576a656e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new unique id by using the uuid library and then convert it to a ros compatible string (underscores instead of dashes)  <a href="#a0f5790310ea8af86ff8b102576a656e3">More...</a><br /></td></tr>
 <tr class="separator:a0f5790310ea8af86ff8b102576a656e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4f0c6a636f042622cbb2b77c6a0d3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a9cf4f0c6a636f042622cbb2b77c6a0d3">getNextFeatureUUID</a> ()</td></tr>
+<tr class="memdesc:a9cf4f0c6a636f042622cbb2b77c6a0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next id of/for a feature.  <a href="#a9cf4f0c6a636f042622cbb2b77c6a0d3">More...</a><br /></td></tr>
 <tr class="separator:a9cf4f0c6a636f042622cbb2b77c6a0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ac413cdd9160713defdae6fc5dd173e35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; tapi_lib::Feature &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#ac413cdd9160713defdae6fc5dd173e35">featureMsgs</a></td></tr>
+<tr class="memdesc:ac413cdd9160713defdae6fc5dd173e35"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of Feature-messages to call the Hello-service  <a href="#ac413cdd9160713defdae6fc5dd173e35">More...</a><br /></td></tr>
 <tr class="separator:ac413cdd9160713defdae6fc5dd173e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a537172133f12dcba811e6a1a17fe62"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0a537172133f12dcba811e6a1a17fe62">uuid</a></td></tr>
+<tr class="memdesc:a0a537172133f12dcba811e6a1a17fe62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID of this device.  <a href="#a0a537172133f12dcba811e6a1a17fe62">More...</a><br /></td></tr>
 <tr class="separator:a0a537172133f12dcba811e6a1a17fe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a4e172697e3a59bacbedc99dbb4bf434f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a4e172697e3a59bacbedc99dbb4bf434f">heartbeat</a> ()</td></tr>
+<tr class="memdesc:a4e172697e3a59bacbedc99dbb4bf434f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends regular Hello-service calls to keep the device state "alive".  <a href="#a4e172697e3a59bacbedc99dbb4bf434f">More...</a><br /></td></tr>
 <tr class="separator:a4e172697e3a59bacbedc99dbb4bf434f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c914f36a14a9ce21ea5a4eec6c4e06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a29c914f36a14a9ce21ea5a4eec6c4e06">loadUUIDs</a> ()</td></tr>
+<tr class="memdesc:a29c914f36a14a9ce21ea5a4eec6c4e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the config file for this device and load the stored uuids.  <a href="#a29c914f36a14a9ce21ea5a4eec6c4e06">More...</a><br /></td></tr>
 <tr class="separator:a29c914f36a14a9ce21ea5a4eec6c4e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa1154e242a3f55ff3fbdc9ea4d305a50"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#aa1154e242a3f55ff3fbdc9ea4d305a50">deviceType</a></td></tr>
+<tr class="memdesc:aa1154e242a3f55ff3fbdc9ea4d305a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the type of the device.  <a href="#aa1154e242a3f55ff3fbdc9ea4d305a50">More...</a><br /></td></tr>
 <tr class="separator:aa1154e242a3f55ff3fbdc9ea4d305a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a816bf2e26351223cc99c5513971cf958"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a816bf2e26351223cc99c5513971cf958">featureUUIDs</a></td></tr>
+<tr class="memdesc:a816bf2e26351223cc99c5513971cf958"><td class="mdescLeft">&#160;</td><td class="mdescRight">All currently generated/loaded unique IDs for features.  <a href="#a816bf2e26351223cc99c5513971cf958">More...</a><br /></td></tr>
 <tr class="separator:a816bf2e26351223cc99c5513971cf958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ba45d737e2a36a591a62c8753cc7090"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a3ba45d737e2a36a591a62c8753cc7090">filenameDevUUID</a></td></tr>
+<tr class="memdesc:a3ba45d737e2a36a591a62c8753cc7090"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filename (including the path) where the uuid of the device is stored.  <a href="#a3ba45d737e2a36a591a62c8753cc7090">More...</a><br /></td></tr>
 <tr class="separator:a3ba45d737e2a36a591a62c8753cc7090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9db74cdb4bf60582b78b8145b0d86e4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#ad9db74cdb4bf60582b78b8145b0d86e4">filenameFeatureUUIDs</a></td></tr>
+<tr class="memdesc:ad9db74cdb4bf60582b78b8145b0d86e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filename (including the path) where the uuids of the device's features are stored.  <a href="#ad9db74cdb4bf60582b78b8145b0d86e4">More...</a><br /></td></tr>
 <tr class="separator:ad9db74cdb4bf60582b78b8145b0d86e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eeb2968c9ef6450b0e85d7f3c426154"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a9eeb2968c9ef6450b0e85d7f3c426154">firstRun</a></td></tr>
+<tr class="memdesc:a9eeb2968c9ef6450b0e85d7f3c426154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store whether it's the first time the node connects to Hello-Service for less unnecessary output of the <code>connect</code> function.  <a href="#a9eeb2968c9ef6450b0e85d7f3c426154">More...</a><br /></td></tr>
 <tr class="separator:a9eeb2968c9ef6450b0e85d7f3c426154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fcb3db5bbde9e8d0ad298e5358c6866"><td class="memItemLeft" align="right" valign="top">std_msgs::Header&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0fcb3db5bbde9e8d0ad298e5358c6866">header</a></td></tr>
+<tr class="memdesc:a0fcb3db5bbde9e8d0ad298e5358c6866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header for the Hello calls.  <a href="#a0fcb3db5bbde9e8d0ad298e5358c6866">More...</a><br /></td></tr>
 <tr class="separator:a0fcb3db5bbde9e8d0ad298e5358c6866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada19cec8ee271d7a5c72ec5c44e80054"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#ada19cec8ee271d7a5c72ec5c44e80054">heartbeatInterval</a></td></tr>
+<tr class="memdesc:ada19cec8ee271d7a5c72ec5c44e80054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat (delay the device shall wait between two Hello-calls) configured for this device.  <a href="#ada19cec8ee271d7a5c72ec5c44e80054">More...</a><br /></td></tr>
 <tr class="separator:ada19cec8ee271d7a5c72ec5c44e80054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a127c77ee395d0e33bf9775366e755b86"><td class="memItemLeft" align="right" valign="top">std::thread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a127c77ee395d0e33bf9775366e755b86">heartbeatThread</a></td></tr>
+<tr class="memdesc:a127c77ee395d0e33bf9775366e755b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread to run the <code>heartbeat-function</code>.  <a href="#a127c77ee395d0e33bf9775366e755b86">More...</a><br /></td></tr>
 <tr class="separator:a127c77ee395d0e33bf9775366e755b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ccba568e1f259d67f3f0470c30d3a22"><td class="memItemLeft" align="right" valign="top">ros::ServiceClient&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a2ccba568e1f259d67f3f0470c30d3a22">helloClient</a></td></tr>
+<tr class="memdesc:a2ccba568e1f259d67f3f0470c30d3a22"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>ros::ServiceClient</code> to connect to the <code>Hello</code> service  <a href="#a2ccba568e1f259d67f3f0470c30d3a22">More...</a><br /></td></tr>
 <tr class="separator:a2ccba568e1f259d67f3f0470c30d3a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bfab441471a036f278575aa0eb42245"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a3bfab441471a036f278575aa0eb42245">nh</a></td></tr>
+<tr class="memdesc:a3bfab441471a036f278575aa0eb42245"><td class="mdescLeft">&#160;</td><td class="mdescRight">NodeHandle-pointer necessary to create subscribers.  <a href="#a3bfab441471a036f278575aa0eb42245">More...</a><br /></td></tr>
 <tr class="separator:a3bfab441471a036f278575aa0eb42245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d4832090696248f84a1baae4c6549c1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a6d4832090696248f84a1baae4c6549c1">nodename</a></td></tr>
+<tr class="memdesc:a6d4832090696248f84a1baae4c6549c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the node/device.  <a href="#a6d4832090696248f84a1baae4c6549c1">More...</a><br /></td></tr>
 <tr class="separator:a6d4832090696248f84a1baae4c6549c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00054">54</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<div class="textblock"><p>Create Tapi-compliant devices with the help of this class <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Tobias Holst </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.1.1 </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00068">68</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afeaf13f48e64453d85b5a69d613e0f70"></a>
 <div class="memitem">
@@ -141,7 +167,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00052">52</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Create a <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">TapiClient</a> object as the helper to connect to the core of <a class="el" href="namespaceTapi.html">Tapi</a> and create Tapi-compliant publishers/subscribers/serviceservers/serviceclients. Usually called by classes who inherits from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nh</td><td>Pointer to a <code>ros::NodeHandle</code> created outside of this class </td></tr>
+    <tr><td class="paramname">nodename</td><td>Name of the device </td></tr>
+    <tr><td class="paramname">deviceType</td><td>Type of the device, 1 for a PUBLISHER_DEVICE, 2 for a SUBSCRIBER_DEVICE, 3 for a SERVICE_SERVER and 4 for a SERVICE_CLIENT </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00060">60</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -158,7 +194,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00066">66</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Shutdown the Hello-client and its heartbeat-thread and free the memory. </p>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00078">78</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -184,7 +222,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00075">75</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Connect to the Hello-Service on /Tapi/HelloServ and send our device data. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if connected successfully, <code>false</code> if not </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><code>Hello.srv</code> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00087">87</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,7 +251,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00116">116</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Generates a new unique id by using the uuid library and then convert it to a ros compatible string (underscores instead of dashes) </p>
+<dl class="section return"><dt>Returns</dt><dd>Unique ID as a ros compatible string </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00139">139</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +279,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00144">144</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Get the next id of/for a feature. </p>
+<p>It will use the ID from the config-file if there still is one. If not it will generate on and append it to the config file. </p><dl class="section return"><dt>Returns</dt><dd>Next unique id for a feature as a ros compatible string </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>Tapi::TapiClient::loadUUIDS </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00176">176</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +308,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00128">128</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Sends regular Hello-service calls to keep the device state "alive". </p>
+<p>Started in an extra (heartbeat-) thread. On failure it gives another try every WAIT_MS_ON_ERROR ms, on success it waits the configured heartbeat time for this device. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a127c77ee395d0e33bf9775366e755b86" title="Thread to run the heartbeat-function. ">Tapi::TapiClient::heartbeatThread</a> </dd>
+<dd>
+<a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf" title="Connect to the Hello-Service on /Tapi/HelloServ and send our device data. ">Tapi::TapiClient::connect</a> </dd>
+<dd>
+<a class="el" href="classTapi_1_1TapiClient.html#ada19cec8ee271d7a5c72ec5c44e80054" title="Heartbeat (delay the device shall wait between two Hello-calls) configured for this device...">Tapi::TapiClient::heartbeatInterval</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00159">159</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +340,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00163">163</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
+<p>Open the config file for this device and load the stored uuids. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a816bf2e26351223cc99c5513971cf958" title="All currently generated/loaded unique IDs for features. ">Tapi::TapiClient::featureUUIDs</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8cpp_source.html#l00198">198</a> of file <a class="el" href="tapi__client_8cpp_source.html">tapi_client.cpp</a>.</p>
 
 </div>
 </div>
@@ -307,7 +366,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00077">77</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Store the type of the device. </p>
+<p>It's 1 for PUBLISHER_DEVICE, 2 for SUBSCRIBER_DEVICE, 1 (=PUBLISHER_DEVICE) for SERVICE_SERVER and 2 (=SUBSCRIBER_DEVICE) for SERVICE_CLIENT </p>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00155">155</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -329,7 +391,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00068">68</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p><code>vector</code> of Feature-messages to call the Hello-service </p>
+<p>They are generated in the inherited classes and contain the information about the features. </p><dl class="section see"><dt>See also</dt><dd><code>Feature.msg</code> </dd>
+<dd>
+<a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf" title="Connect to the Hello-Service on /Tapi/HelloServ and send our device data. ">Tapi::TapiClient::connect</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00122">122</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -351,7 +418,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00078">78</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>All currently generated/loaded unique IDs for features. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a29c914f36a14a9ce21ea5a4eec6c4e06" title="Open the config file for this device and load the stored uuids. ">Tapi::TapiClient::loadUUIDs</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00161">161</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +443,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00079">79</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>The filename (including the path) where the uuid of the device is stored. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a29c914f36a14a9ce21ea5a4eec6c4e06" title="Open the config file for this device and load the stored uuids. ">Tapi::TapiClient::loadUUIDs</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00167">167</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +468,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00080">80</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>The filename (including the path) where the uuids of the device's features are stored. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a29c914f36a14a9ce21ea5a4eec6c4e06" title="Open the config file for this device and load the stored uuids. ">Tapi::TapiClient::loadUUIDs</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00173">173</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -417,7 +493,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00081">81</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Store whether it's the first time the node connects to Hello-Service for less unnecessary output of the <code>connect</code> function. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf" title="Connect to the Hello-Service on /Tapi/HelloServ and send our device data. ">Tapi::TapiClient::connect</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00180">180</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +518,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00082">82</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Header for the Hello calls. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf" title="Connect to the Hello-Service on /Tapi/HelloServ and send our device data. ">Tapi::TapiClient::connect</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00186">186</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +543,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00083">83</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Heartbeat (delay the device shall wait between two Hello-calls) configured for this device. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a4e172697e3a59bacbedc99dbb4bf434f" title="Sends regular Hello-service calls to keep the device state &quot;alive&quot;. ">Tapi::TapiClient::heartbeat</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00192">192</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -483,7 +568,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00084">84</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Thread to run the <code>heartbeat-function</code>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#a4e172697e3a59bacbedc99dbb4bf434f" title="Sends regular Hello-service calls to keep the device state &quot;alive&quot;. ">Tapi::TapiClient::heartbeat</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00198">198</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -505,7 +593,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00085">85</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p><code>ros::ServiceClient</code> to connect to the <code>Hello</code> service </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf" title="Connect to the Hello-Service on /Tapi/HelloServ and send our device data. ">Tapi::TapiClient::connect</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00204">204</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -527,7 +618,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00086">86</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>NodeHandle-pointer necessary to create subscribers. </p>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00207">207</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -549,7 +642,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00087">87</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Name of the node/device. </p>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00210">210</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +666,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00069">69</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
+<p>Unique ID of this device. </p>
+
+<p>Definition at line <a class="el" href="tapi__client_8hpp_source.html#l00125">125</a> of file <a class="el" href="tapi__client_8hpp_source.html">tapi_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -585,7 +682,7 @@ Private Attributes</h2></td></tr>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Tue Sep 20 2016 03:59:59</small>
+<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
 </div>
 </body>
 </html>

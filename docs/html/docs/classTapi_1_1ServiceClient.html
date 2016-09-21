@@ -37,13 +37,16 @@
 </div><!--header-->
 <div class="contents">
 
+<p>Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  
+ <a href="classTapi_1_1ServiceClient.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Tapi::ServiceClient:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTapi_1_1ServiceClient__inherit__graph.png" border="0" usemap="#Tapi_1_1ServiceClient_inherit__map" alt="Inheritance graph"/></div>
 <map name="Tapi_1_1ServiceClient_inherit__map" id="Tapi_1_1ServiceClient_inherit__map">
-<area shape="rect" id="node2" href="classTapi_1_1TapiClient.html" title="Tapi::TapiClient" alt="" coords="15,5,129,32"/>
+<area shape="rect" id="node2" href="classTapi_1_1TapiClient.html" title="Create Tapi&#45;compliant devices with the help of this class Tapi::TapiClient. " alt="" coords="15,5,129,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -51,53 +54,72 @@ Inheritance diagram for Tapi::ServiceClient:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad163c802a9ebd165fd73c458538f361a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad163c802a9ebd165fd73c458538f361a"><td class="memTemplItemLeft" align="right" valign="top">ros::ServiceClient **&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#ad163c802a9ebd165fd73c458538f361a">AddFeature</a> (std::string featurename=&quot;&quot;)</td></tr>
+<tr class="memdesc:ad163c802a9ebd165fd73c458538f361a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">ServiceClient</a> by adding a feature.  <a href="#ad163c802a9ebd165fd73c458538f361a">More...</a><br /></td></tr>
 <tr class="separator:ad163c802a9ebd165fd73c458538f361a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6506d9a44e0e016999d6e9818b9e6c5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#a6506d9a44e0e016999d6e9818b9e6c5a">ServiceClient</a> (ros::NodeHandle *<a class="el" href="classTapi_1_1ServiceClient.html#a43d18a69b075fb3c126132181e808a1e">nh</a>, std::string <a class="el" href="classTapi_1_1ServiceClient.html#a15c325543dc67e83e5dbeb28424de889">nodename</a>=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6506d9a44e0e016999d6e9818b9e6c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a serviceclient object as the helper to connect to the core of tapi and create Tapi-compliant serviceclients.  <a href="#a6506d9a44e0e016999d6e9818b9e6c5a">More...</a><br /></td></tr>
 <tr class="separator:a6506d9a44e0e016999d6e9818b9e6c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff5d03bcf59fcf4a423b52e78e112a80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#aff5d03bcf59fcf4a423b52e78e112a80">~ServiceClient</a> ()</td></tr>
+<tr class="memdesc:aff5d03bcf59fcf4a423b52e78e112a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown all serviceclients and free the memory.  <a href="#aff5d03bcf59fcf4a423b52e78e112a80">More...</a><br /></td></tr>
 <tr class="separator:aff5d03bcf59fcf4a423b52e78e112a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#afeaf13f48e64453d85b5a69d613e0f70">TapiClient</a> (ros::NodeHandle *<a class="el" href="classTapi_1_1TapiClient.html#a3bfab441471a036f278575aa0eb42245">nh</a>, std::string <a class="el" href="classTapi_1_1TapiClient.html#a6d4832090696248f84a1baae4c6549c1">nodename</a>, uint8_t <a class="el" href="classTapi_1_1TapiClient.html#aa1154e242a3f55ff3fbdc9ea4d305a50">deviceType</a>)</td></tr>
+<tr class="memdesc:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">TapiClient</a> object as the helper to connect to the core of <a class="el" href="namespaceTapi.html">Tapi</a> and create Tapi-compliant publishers/subscribers/serviceservers/serviceclients. Usually called by classes who inherits from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>.  <a href="#afeaf13f48e64453d85b5a69d613e0f70">More...</a><br /></td></tr>
 <tr class="separator:afeaf13f48e64453d85b5a69d613e0f70 inherit pub_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#aae0b197261385e46c95d4b4b8f1600bc">~TapiClient</a> ()</td></tr>
+<tr class="memdesc:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown the Hello-client and its heartbeat-thread and free the memory.  <a href="#aae0b197261385e46c95d4b4b8f1600bc">More...</a><br /></td></tr>
 <tr class="separator:aae0b197261385e46c95d4b4b8f1600bc inherit pub_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab4a8f3e8d21c88f038b5cecb0dc7c8e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#ab4a8f3e8d21c88f038b5cecb0dc7c8e9">readConfigMsg</a> (const tapi_lib::Connection::ConstPtr &amp;msg)</td></tr>
+<tr class="memdesc:ab4a8f3e8d21c88f038b5cecb0dc7c8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Config-messages from the core to get commands to which <a class="el" href="classTapi_1_1ServiceServer.html" title="Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from Ta...">ServiceServer</a> we shall connect.  <a href="#ab4a8f3e8d21c88f038b5cecb0dc7c8e9">More...</a><br /></td></tr>
 <tr class="separator:ab4a8f3e8d21c88f038b5cecb0dc7c8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af87ecebce3d571343c37f8b6f713802a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; ros::ServiceClientOptions, ros::ServiceClient * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#af87ecebce3d571343c37f8b6f713802a">clients</a></td></tr>
+<tr class="memdesc:af87ecebce3d571343c37f8b6f713802a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>vector</code> of <code>pair</code> objects of <code>ros::ServiceClientOptions</code> and <code>ros::ServiceClient</code> to hold the information about all serviceclients.  <a href="#af87ecebce3d571343c37f8b6f713802a">More...</a><br /></td></tr>
 <tr class="separator:af87ecebce3d571343c37f8b6f713802a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e2e56a8411673bf0d74f79f5dbeea79"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#a1e2e56a8411673bf0d74f79f5dbeea79">configSub</a></td></tr>
+<tr class="memdesc:a1e2e56a8411673bf0d74f79f5dbeea79"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTapi_1_1Subscriber.html" title="Create Tapi-compliant subscribers with the help of this class, inherits its base functions from Tapi:...">Subscriber</a> to subscribe the Config-messages topic to get information of who shall connect to who. Listens on /Tapi/Config.  <a href="#a1e2e56a8411673bf0d74f79f5dbeea79">More...</a><br /></td></tr>
 <tr class="separator:a1e2e56a8411673bf0d74f79f5dbeea79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43d18a69b075fb3c126132181e808a1e"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#a43d18a69b075fb3c126132181e808a1e">nh</a></td></tr>
+<tr class="memdesc:a43d18a69b075fb3c126132181e808a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">NodeHandle-pointer necessary to create subscribers and serviceclients.  <a href="#a43d18a69b075fb3c126132181e808a1e">More...</a><br /></td></tr>
 <tr class="separator:a43d18a69b075fb3c126132181e808a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15c325543dc67e83e5dbeb28424de889"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#a15c325543dc67e83e5dbeb28424de889">nodename</a></td></tr>
+<tr class="memdesc:a15c325543dc67e83e5dbeb28424de889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the node.  <a href="#a15c325543dc67e83e5dbeb28424de889">More...</a><br /></td></tr>
 <tr class="separator:a15c325543dc67e83e5dbeb28424de889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0efd1a9dc2012947cb7fe6fbda1ceb9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#af0efd1a9dc2012947cb7fe6fbda1ceb9">serviceName</a></td></tr>
-<tr class="separator:af0efd1a9dc2012947cb7fe6fbda1ceb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26976a77dc6b463d4a4c573270a24fb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1ServiceClient.html#a26976a77dc6b463d4a4c573270a24fb1">serviceName</a></td></tr>
+<tr class="memdesc:a26976a77dc6b463d4a4c573270a24fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of current connected topics/services. This helps to check if we need to change or just stay, if it didn't change.  <a href="#a26976a77dc6b463d4a4c573270a24fb1">More...</a><br /></td></tr>
+<tr class="separator:a26976a77dc6b463d4a4c573270a24fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#add714cf851f39883647a54ff220b1ecf">connect</a> ()</td></tr>
+<tr class="memdesc:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the Hello-Service on /Tapi/HelloServ and send our device data.  <a href="#add714cf851f39883647a54ff220b1ecf">More...</a><br /></td></tr>
 <tr class="separator:add714cf851f39883647a54ff220b1ecf inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0f5790310ea8af86ff8b102576a656e3">generateUUID</a> ()</td></tr>
+<tr class="memdesc:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new unique id by using the uuid library and then convert it to a ros compatible string (underscores instead of dashes)  <a href="#a0f5790310ea8af86ff8b102576a656e3">More...</a><br /></td></tr>
 <tr class="separator:a0f5790310ea8af86ff8b102576a656e3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a9cf4f0c6a636f042622cbb2b77c6a0d3">getNextFeatureUUID</a> ()</td></tr>
+<tr class="memdesc:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next id of/for a feature.  <a href="#a9cf4f0c6a636f042622cbb2b77c6a0d3">More...</a><br /></td></tr>
 <tr class="separator:a9cf4f0c6a636f042622cbb2b77c6a0d3 inherit pro_methods_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classTapi_1_1TapiClient"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classTapi_1_1TapiClient')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classTapi_1_1TapiClient.html">Tapi::TapiClient</a></td></tr>
 <tr class="memitem:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::vector&lt; tapi_lib::Feature &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#ac413cdd9160713defdae6fc5dd173e35">featureMsgs</a></td></tr>
+<tr class="memdesc:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>vector</code> of Feature-messages to call the Hello-service  <a href="#ac413cdd9160713defdae6fc5dd173e35">More...</a><br /></td></tr>
 <tr class="separator:ac413cdd9160713defdae6fc5dd173e35 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTapi_1_1TapiClient.html#a0a537172133f12dcba811e6a1a17fe62">uuid</a></td></tr>
+<tr class="memdesc:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID of this device.  <a href="#a0a537172133f12dcba811e6a1a17fe62">More...</a><br /></td></tr>
 <tr class="separator:a0a537172133f12dcba811e6a1a17fe62 inherit pro_attribs_classTapi_1_1TapiClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00050">50</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<div class="textblock"><p>Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Tobias Holst </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.1.1 </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00065">65</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6506d9a44e0e016999d6e9818b9e6c5a"></a>
 <div class="memitem">
@@ -123,7 +145,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00043">43</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
+<p>Create a serviceclient object as the helper to connect to the core of tapi and create Tapi-compliant serviceclients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nh</td><td>Pointer to a <code>ros::NodeHandle</code> created outside of this class </td></tr>
+    <tr><td class="paramname">nodename</td><td>Name of the device </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00051">51</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
 
 </div>
 </div>
@@ -140,7 +171,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00049">49</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
+<p>Shutdown all serviceclients and free the memory. </p>
+
+<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00057">57</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +202,22 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00060">60</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p>Create a <a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">ServiceClient</a> by adding a feature. </p>
+<p>Template. Gets a saved uuid or generates an new one with the help of <a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a>, creates ros::ServiceClientOptions with the templated type and the device uuid and feature uuid as topic name. Then it stores a pointer to this options and the infos about this topic/feature in a Feature-message. The <a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">ServiceClient</a> itself isn't existing yet! It will be built with the help of the ServiceClientOptions only when there is an active connection, provided by the core. Also by the help of generating AdvertiseServiceOptions the string of the service-type (e.g. tapi_lib/Hello) is extracted and saved in the feature message. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">featurename</td><td>(Descriptive) name of the feature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Doublepointer (has to be derefernced twice!) to the ros::ServiceClient </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>When trying to use the ros::ServiceClient always dereference the pointer once first and check if it's a nullpointer! This means there is no connection to any <a class="el" href="classTapi_1_1ServiceServer.html" title="Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from Ta...">ServiceServer</a> at the moment. Only if it's a valid pointer dereference it twice! </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><code>Feature.msg</code> </dd>
+<dd>
+<a class="el" href="classTapi_1_1TapiClient.html" title="Create Tapi-compliant devices with the help of this class Tapi::TapiClient. ">Tapi::TapiClient</a> </dd>
+<dd>
+<a class="el" href="classTapi_1_1ServiceClient.html#af87ecebce3d571343c37f8b6f713802a" title="A vector of pair objects of ros::ServiceClientOptions and ros::ServiceClient to hold the information ...">Tapi::ServiceClient::clients</a> <div class="fragment"><div class="line"><span class="comment">// Example code to use the Tapi::ServiceClient class</span></div><div class="line"><span class="comment">// nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())</span></div><div class="line"><a class="code" href="classTapi_1_1ServiceClient.html">Tapi::ServiceClient</a>* tclient = <span class="keyword">new</span> <a class="code" href="classTapi_1_1ServiceClient.html">Tapi::ServiceClient</a>(<a class="code" href="classTapi_1_1ServiceClient.html#a43d18a69b075fb3c126132181e808a1e">nh</a>, <span class="stringliteral">&quot;Test&quot;</span>);</div><div class="line">ros::ServiceClient** client = tclient-&gt;<a class="code" href="classTapi_1_1ServiceClient.html#ad163c802a9ebd165fd73c458538f361a">AddFeature</a>&lt;tapi_lib::GetDeviceList&gt;(<span class="stringliteral">&quot;Devicelist Getter&quot;</span>);</div><div class="line"><span class="keywordflow">while</span>(ros::ok()</div><div class="line">{</div><div class="line">  <span class="comment">// Check whether the ServiceClient is connected</span></div><div class="line">  <span class="keywordflow">if</span> (*tclient)</div><div class="line">  {</div><div class="line">    <span class="comment">// Call the service</span></div><div class="line">    tapi_lib::GetDeviceList msg;</div><div class="line">    msg.request.get = <span class="keyword">true</span>;</div><div class="line">    <span class="keywordflow">if</span> ((*client)-&gt;call(msg))</div><div class="line">    {</div><div class="line">      <span class="comment">// Do something wit the response</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// Don&#39;t delete ros::ServiceClient objects, only delete the Tapi::ServiceClient object, it will shutdown and delete</span></div><div class="line"><span class="comment">// the serviceclients in its destructor</span></div><div class="line"><span class="keyword">delete</span> tclient;</div></div><!-- fragment --> </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00127">127</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +243,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00061">61</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
+<p>Get Config-messages from the core to get commands to which <a class="el" href="classTapi_1_1ServiceServer.html" title="Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from Ta...">ServiceServer</a> we shall connect. </p>
+<p>On this topic all commands about connections are published. So in this function we first have to check if there is one (or more) message with our uuid and a feature uuid of us in it. If yes we check who we shall subscribe/connect or if we have to delete our current connection. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The message waiting in the ros message queue where the information about who has to connect to who is stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><code>Connection.msg</code> </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8cpp_source.html#l00069">69</a> of file <a class="el" href="serviceclient_8cpp_source.html">serviceclient.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +275,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00090">90</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p>A <code>vector</code> of <code>pair</code> objects of <code>ros::ServiceClientOptions</code> and <code>ros::ServiceClient</code> to hold the information about all serviceclients. </p>
+<p>The second part of the pair is zero if the feature isn't connected to a <code><a class="el" href="classTapi_1_1ServiceServer.html" title="Create Tapi-compliant serviceservers with the help of this class, inherits its base functions from Ta...">ServiceServer</a></code>. If the core tells us to connect, the <code><a class="el" href="classTapi_1_1ServiceClient.html" title="Create Tapi-compliant serviceclients with the help of this class, inherits its base functions from Ta...">ServiceClient</a></code> is created with the help of the <code>ServiceClientOptions</code> object in the first part of the <code>pair</code>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1ServiceClient.html#ad163c802a9ebd165fd73c458538f361a" title="Create a ServiceClient by adding a feature. ">Tapi::ServiceClient::AddFeature</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00196">196</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +300,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00091">91</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p><a class="el" href="classTapi_1_1Subscriber.html" title="Create Tapi-compliant subscribers with the help of this class, inherits its base functions from Tapi:...">Subscriber</a> to subscribe the Config-messages topic to get information of who shall connect to who. Listens on /Tapi/Config. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1ServiceClient.html#ab4a8f3e8d21c88f038b5cecb0dc7c8e9" title="Get Config-messages from the core to get commands to which ServiceServer we shall connect...">Tapi::ServiceClient::readConfigMsg</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00203">203</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +325,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00092">92</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p>NodeHandle-pointer necessary to create subscribers and serviceclients. </p>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00206">206</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
@@ -284,11 +349,13 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00093">93</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p>Name of the node. </p>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00209">209</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af0efd1a9dc2012947cb7fe6fbda1ceb9"></a>
+<a class="anchor" id="a26976a77dc6b463d4a4c573270a24fb1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -296,7 +363,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tapi::ServiceClient::serviceName</td>
+          <td class="memname">std::vector&lt;std::string&gt; Tapi::ServiceClient::serviceName</td>
         </tr>
       </table>
   </td>
@@ -306,7 +373,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00094">94</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
+<p><code>vector</code> of current connected topics/services. This helps to check if we need to change or just stay, if it didn't change. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTapi_1_1ServiceClient.html#ab4a8f3e8d21c88f038b5cecb0dc7c8e9" title="Get Config-messages from the core to get commands to which ServiceServer we shall connect...">Tapi::ServiceClient::readConfigMsg</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="serviceclient_8hpp_source.html#l00216">216</a> of file <a class="el" href="serviceclient_8hpp_source.html">serviceclient.hpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +390,7 @@ template&lt;typename T &gt; </div>
 <hr size="1"><div style="align: right;">
 <a href="https://github.com/tobby88/ros-tapi-lib">tapi_lib</a><br />
 Author(s): tobby <tobby@tobby.eu></br />
-<small>autogenerated on Tue Sep 20 2016 03:59:59</small>
+<small>autogenerated on Wed Sep 21 2016 04:24:24</small>
 </div>
 </body>
 </html>

@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file subscriber.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 29 Aug 2016
+ * \brief Definition of the Tapi::Subscriber-class and its member functions
+ */
+
 #include "include/tapi_lib/subscriber.hpp"
 #include "tapi_lib/Feature.h"
 
@@ -63,6 +71,7 @@ Subscriber::~Subscriber()
 
 double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 {
+  // Create empty options for this topic
   string noTopic = "";
   topicNames.push_back(noTopic);
   double* dblptr = 0;
@@ -70,6 +79,9 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
   pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
   newEntry = make_pair(opt, subscriber);
   subscribers.push_back(newEntry);
+
+  // Generate a feature message for the featureMsgs vector of Tapi::TapiClient, save it and give the user a pointerto
+  // the coefficient
   tapi_lib::Feature feature;
   string temp = opt.datatype;
   feature.FeatureType = temp;
@@ -86,10 +98,12 @@ double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 
 void Subscriber::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
 {
+  // Iterate through all of our features to check if this Config message contains a uuid of us
   for (int i = 0; i < featureMsgs.size(); i++)
   {
     if (msg->SubscriberUUID == uuid && msg->SubscriberFeatureUUID == featureMsgs[i].UUID)
     {
+      // Message is for us. Now check if we shall disconnect
       if (msg->PublisherUUID == "0" || msg->PublisherFeatureUUID == "0")
         if (subscribers[i].second)
         {
@@ -99,8 +113,11 @@ void Subscriber::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
         }
         else
           ;
+      // Or we shall connect
       else
       {
+        // Check if there currently is a connection and if it's the same as we shall connect. Because only if we change
+        // the connection we need to stop the old service and start/create the new one
         if (topicNames[i] != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID ||
             subscribers[i].second == 0)
         {

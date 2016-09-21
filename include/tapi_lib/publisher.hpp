@@ -90,6 +90,7 @@ public:
    * \return Pointer to the publisher
    * \see \c Feature.msg
    * \see Tapi::TapiClient
+   * \see Tapi::Publisher::publishers
    * \code{.cpp}
    * // Example code to use the Tapi::Publisher class
    * // nh is a pointer to a ros::NodeHandle generated outside (e.g. in int main())
@@ -125,7 +126,7 @@ public:
       temp = ros::SubscribeOptions::create<T>("", 1, NULL, ros::VoidPtr(), NULL);
       feature.FeatureType = temp.datatype;
 
-      // Save name and uuid and save the create message in the \c featureMsgs \c vector of Tapi::TapiClient
+      // Save name and uuid and save the create message in the featureMsgs vector of Tapi::TapiClient
       feature.Name = featurename;
       feature.UUID = featureUUID;
       featureMsgs.push_back(feature);
@@ -137,14 +138,14 @@ public:
 private:
   // Private member variables
 
-  //! NodeHandle-pointer necessary to create subscribers, publishers and services.
+  //! NodeHandle-pointer necessary to create publishers.
   ros::NodeHandle *nh;
 
   //! Name of the node
   std::string nodename;
 
   /*!
-   * \brief \c vector of pointers to all ros::publisher objects created with the help of this class
+   * \brief \c vector of pointers to all \c ros::publisher objects created with the help of this class
    * \see Tapi::Publisher::AddFeature
    */
   std::vector<ros::Publisher *> publishers;

@@ -32,6 +32,14 @@
  *  Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.*
  ******************************************************************************/
 
+/*!
+ * \file serviceclient.cpp
+ * \ingroup tapi_lib
+ * \author Tobias Holst
+ * \date 06 Sep 2016
+ * \brief Definition of the Tapi::ServiceClient-class and its member functions
+ */
+
 #include "include/tapi_lib/serviceclient.hpp"
 
 using namespace std;
@@ -60,10 +68,12 @@ ServiceClient::~ServiceClient()
 // Private member functions
 void ServiceClient::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
 {
+  // Iterate through all of our features to check if this Config message contains a uuid of us
   for (int i = 0; i < featureMsgs.size(); i++)
   {
     if (msg->SubscriberUUID == uuid && msg->SubscriberFeatureUUID == featureMsgs[i].UUID)
     {
+      // Message is for us. Now check if we shall disconnect
       if (msg->PublisherUUID == "0" || msg->PublisherFeatureUUID == "0")
         if (clients[i].second)
         {
@@ -73,8 +83,11 @@ void ServiceClient::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
         }
         else
           ;
+      // Or we shall connect
       else
       {
+        // Check if there currently is a connection and if it's the same as we shall connect. Because only if we change
+        // the connection we need to stop the old service and start/create the new one
         if (serviceName[i] != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID || clients[i].second == 0)
         {
           serviceName[i] = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
