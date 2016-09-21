@@ -63,6 +63,8 @@ Subscriber::~Subscriber()
 
 double* Subscriber::AddFeature(ros::SubscribeOptions opt, string featurename)
 {
+  string noTopic = "";
+  topicNames.push_back(noTopic);
   double* dblptr = 0;
   ros::Subscriber* subscriber = 0;
   pair<ros::SubscribeOptions, ros::Subscriber*> newEntry;
@@ -99,10 +101,11 @@ void Subscriber::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
           ;
       else
       {
-        if (topicName != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID || subscribers[i].second == 0)
+        if (topicNames[i] != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID ||
+            subscribers[i].second == 0)
         {
-          topicName = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
-          subscribers[i].first.topic = topicName;
+          topicNames[i] = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
+          subscribers[i].first.topic = topicNames[i];
           if (subscribers[i].second)
           {
             subscribers[i].second->shutdown();

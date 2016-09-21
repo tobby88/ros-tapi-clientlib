@@ -59,6 +59,8 @@ public:
   template <typename T>
   ros::ServiceClient **AddFeature(std::string featurename = "")
   {
+    std::string noTopic = "";
+    serviceName.push_back(noTopic);
     ros::ServiceClientOptions opt;
     ros::M_string empty;
     ros::ServiceClient *client = 0;
@@ -91,7 +93,7 @@ private:
   ros::Subscriber configSub;
   ros::NodeHandle *nh;
   std::string nodename;
-  std::string serviceName;
+  std::vector<std::string> serviceName;
 };
 }
 

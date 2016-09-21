@@ -75,10 +75,10 @@ void ServiceClient::readConfigMsg(const tapi_lib::Connection::ConstPtr& msg)
           ;
       else
       {
-        if (serviceName != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID || clients[i].second == 0)
+        if (serviceName[i] != "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID || clients[i].second == 0)
         {
-          serviceName = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
-          clients[i].first.service = serviceName;
+          serviceName[i] = "/Tapi/" + msg->PublisherUUID + "/" + msg->PublisherFeatureUUID;
+          clients[i].first.service = serviceName[i];
           if (clients[i].second)
           {
             clients[i].second->shutdown();

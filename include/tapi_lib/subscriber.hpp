@@ -68,7 +68,7 @@ private:
   ros::NodeHandle *nh;
   std::string nodename;
   std::vector<std::pair<ros::SubscribeOptions, ros::Subscriber *>> subscribers;
-  std::string topicName;
+  std::vector<std::string> topicNames;
 };
 }
 
